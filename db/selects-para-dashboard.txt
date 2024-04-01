@@ -1,0 +1,39 @@
+Calcular a porcentagem de vitórias
+
+SELECT
+    username,
+    wins,
+    matches,
+    ROUND(
+        CASE 
+            WHEN matches > 0 THEN (wins / matches * 100)
+            ELSE 0 
+        END,
+        2
+    ) AS win_percentage
+FROM
+    public.jogadores;
+
+
+
+Os agentes mais escolhidos, número de partidas jogadas com eles, porcentagem de vitórias
+
+SELECT username, top_agents_1, top_matches_agent_1, top_win_agent_1 FROM JOGADORES;
+
+
+Encontrar jogadores com uma taxa de headshot acima de um determinado valor
+
+SELECT
+    username,
+    kills,
+    headshot
+FROM
+    public.jogadores
+WHERE
+    CAST(REPLACE(headshot, '%', '') AS NUMERIC) > 30; -- exemplo para headshots acima de 30%
+
+
+Total de jogadores 
+
+SELECT COUNT(*) AS total_jogadores
+FROM public.jogadores;

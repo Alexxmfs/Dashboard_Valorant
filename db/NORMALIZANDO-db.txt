@@ -1,0 +1,197 @@
+tratando o playtime
+UPDATE jogadores
+SET playtime = REPLACE(REPLACE(playtime, ' Playtime', ''), 'NULL', '0')
+WHERE playtime LIKE '%Playtime%' OR playtime = 'NULL';
+
+UPDATE jogadores
+SET playtime = REPLACE(playtime, 'h', '')
+WHERE playtime != '0';
+
+DELETE FROM jogadores where username = 'username';
+
+UPDATE jogadores
+SET matches = REPLACE(matches, ' Matches', '')
+WHERE matches IS NOT NULL;
+
+UPDATE jogadores
+SET matches = REPLACE(REPLACE(matches, ' Matches', ''), 'NULL', '0')
+WHERE matches LIKE '%Matches%' OR matches = 'NULL';
+
+UPDATE jogadores
+SET rating = REPLACE(REPLACE(rating, ' Rating', ''), 'NULL', '0')
+WHERE rating LIKE '%Rating%' OR rating = 'NULL';
+
+UPDATE jogadores
+SET level = REPLACE(REPLACE(level, ' Level', ''), 'NULL', '0')
+WHERE level LIKE '%Level%' OR level = 'NULL';
+
+UPDATE jogadores
+SET loses = REPLACE(REPLACE(loses, ' Loses', ''), 'NULL', '0')
+WHERE loses LIKE '%Loses%' OR loses = 'NULL';
+
+UPDATE jogadores
+SET damage_round = REPLACE(REPLACE(damage_round, ' damage_round', ''), 'NULL', '0')
+WHERE damage_round LIKE '%damage_round%' OR damage_round = 'NULL';
+
+UPDATE jogadores
+SET headshot = REPLACE(REPLACE(headshot, ' headshot', ''), 'NULL', '0')
+WHERE headshot LIKE '%headshot%' OR headshot = 'NULL';
+
+UPDATE jogadores
+SET 
+    win = REPLACE(REPLACE(win, ' win', ''), 'NULL', '0')
+    WHERE win LIKE '%win%' OR win = 'NULL';
+
+UPDATE jogadores
+SET 
+    wins = REPLACE(REPLACE(wins, ' wins', ''), 'NULL', '0')
+    WHERE wins LIKE '%wins%' OR wins = 'NULL';
+
+UPDATE jogadores
+SET 
+    kills = REPLACE(REPLACE(kills, ' kills', ''), 'NULL', '0')
+    WHERE kills LIKE '%kills%' OR kills = 'NULL';
+
+UPDATE jogadores
+SET 
+    deaths = REPLACE(REPLACE(deaths, ' deaths', ''), 'NULL', '0')
+    WHERE deaths LIKE '%deaths%' OR deaths = 'NULL';
+
+UPDATE jogadores
+SET 
+    assists = REPLACE(REPLACE(assists, ' assists', ''), 'NULL', '0')
+    WHERE assists LIKE '%assists%' OR assists = 'NULL';
+
+UPDATE jogadores
+SET 
+    kad_ratio = REPLACE(REPLACE(kad_ratio, ' kad_ratio', ''), 'NULL', '0')
+    WHERE kad_ratio LIKE '%kad_ratio%' OR kad_ratio = 'NULL';
+
+UPDATE jogadores
+SET 
+    kills_round = REPLACE(REPLACE(kills_round, ' kills_round', ''), 'NULL', '0')
+    WHERE kills_round LIKE '%kills_round%' OR kills_round = 'NULL';
+
+UPDATE jogadores
+SET 
+    clutches = REPLACE(REPLACE(clutches, ' clutches', ''), 'NULL', '0')
+    WHERE clutches LIKE '%clutches%' OR clutches = 'NULL';
+
+UPDATE jogadores
+SET 
+    top_matches_agent_1 = REPLACE(REPLACE(top_matches_agent_1, ' top_matches_agent_1', ''), 'NULL', '0')
+    WHERE top_matches_agent_1 LIKE '%top_matches_agent_1%' OR top_matches_agent_1 = 'NULL';
+
+UPDATE jogadores
+SET 
+    top_win_agent_1 = REPLACE(REPLACE(top_win_agent_1, ' top_win_agent_1', ''), 'NULL', '0')
+    WHERE top_win_agent_1 LIKE '%top_win_agent_1%' OR top_win_agent_1 = 'NULL';
+
+UPDATE jogadores
+SET 
+    top_kd_agent_1 = REPLACE(REPLACE(top_kd_agent_1, ' top_kd_agent_1', ''), 'NULL', '0')
+    WHERE top_kd_agent_1 LIKE '%top_kd_agent_1%' OR top_kd_agent_1 = 'NULL';
+
+UPDATE jogadores
+SET 
+    top_weapon_headshot_1 = REPLACE(REPLACE(top_weapon_headshot_1, ' top_weapon_headshot_1', ''), 'NULL', '0')
+    WHERE top_weapon_headshot_1 LIKE '%top_weapon_headshot_1%' OR top_weapon_headshot_1 = 'NULL';
+
+UPDATE jogadores
+SET 
+    top_weapon_headshot_2 = REPLACE(REPLACE(top_weapon_headshot_2, ' top_weapon_headshot_2', ''), 'NULL', '0')
+    WHERE top_weapon_headshot_2 LIKE '%top_weapon_headshot_2%' OR top_weapon_headshot_2 = 'NULL';
+
+UPDATE jogadores
+SET 
+    top_porcentagem_map_win_1 = REPLACE(REPLACE(top_porcentagem_map_win_1, ' top_porcentagem_map_win_1', ''), 'NULL', '0')
+    WHERE top_porcentagem_map_win_1 LIKE '%top_porcentagem_map_win_1%' OR top_porcentagem_map_win_1 = 'NULL';
+
+UPDATE jogadores
+SET top_weapon_1 = REPLACE(REPLACE(top_weapon_1, ' top_weapon_1', ''), 'NULL', '0')
+WHERE top_weapon_1 LIKE '%top_weapon_1%' OR top_weapon_1 = 'NULL';
+
+UPDATE jogadores
+SET top_agents_1 = REPLACE(REPLACE(top_agents_1, 'top_agents_1', ''), 'NULL', '0')
+WHERE top_agents_1 LIKE '%top_agents_1%' OR top_agents_1 = 'NULL';
+
+UPDATE jogadores
+SET top_weapon_2 = REPLACE(REPLACE(top_weapon_2, 'top_weapon_2', ''), 'NULL', '0')
+WHERE top_weapon_2 LIKE '%top_weapon_2%' OR top_weapon_2 = 'NULL';
+
+UPDATE jogadores
+SET top_maps_1 = REPLACE(REPLACE(top_maps_1, 'top_maps_1', ''), 'NULL', '0')
+WHERE top_maps_1 LIKE '%top_maps_1%' OR top_maps_1 = 'NULL';
+
+UPDATE jogadores
+SET playtime = REPLACE(playtime, ',', '.');
+
+-- Alterar a coluna playtime para tipo text temporariamente
+ALTER TABLE jogadores
+ALTER COLUMN playtime TYPE text;
+
+-- Remover o "h" no final de cada valor e substituir as vírgulas por pontos
+UPDATE jogadores
+SET playtime = REPLACE(REPLACE(playtime, 'h', ''), ',', '.');
+
+-- Alterar o tipo de dados da coluna playtime para decimal usando a cláusula USING
+ALTER TABLE jogadores
+ALTER COLUMN playtime TYPE DECIMAL(10, 3) USING playtime::DECIMAL(10, 3);
+
+UPDATE jogadores
+SET matches = REPLACE(matches, ',', '.');
+
+UPDATE jogadores
+SET wins = REPLACE(wins, ',', '.');
+
+UPDATE jogadores
+SET kills = REPLACE(kills, ',', '.');
+
+UPDATE jogadores
+SET deaths = REPLACE(deaths, ',', '.');
+
+UPDATE jogadores
+SET assists = REPLACE(assists, ',', '.');
+
+ALTER TABLE jogadores
+ALTER COLUMN matches TYPE DECIMAL(10, 3) USING matches::DECIMAL(10, 3),
+ALTER COLUMN wins TYPE DECIMAL(10, 3) USING wins::DECIMAL(10, 3),
+ALTER COLUMN kills TYPE DECIMAL(10, 3) USING kills::DECIMAL(10, 2),
+ALTER COLUMN deaths TYPE DECIMAL(10, 3) USING deaths::DECIMAL(10, 2),
+ALTER COLUMN assists TYPE DECIMAL(10, 3) USING assists::DECIMAL(10, 2);
+
+UPDATE jogadores
+SET 
+    top_hours_agent_1 = REPLACE(REPLACE(top_hours_agent_1, ' top_hours_agent_1', ''), 'NULL', '0')
+    WHERE top_hours_agent_1 LIKE '%top_hours_agent_1%' OR top_hours_agent_1 = 'NULL';
+
+
+UPDATE jogadores
+SET 
+    top_agents_1 = REPLACE(REPLACE(top_agents_1, '{', ''), '}', ''),
+	top_matches_agent_1 = REPLACE(REPLACE(top_matches_agent_1, '{', ''), '}', ''),
+	top_kd_agent_1 = REPLACE(REPLACE(top_kd_agent_1, '{', ''), '}', ''),
+	clutches = REPLACE(REPLACE(clutches, '{', ''), '}', ''),
+	kills_round = REPLACE(REPLACE(kills_round, '{', ''), '}', ''),
+	kad_ratio = REPLACE(REPLACE(kad_ratio, '{', ''), '}', '')
+	
+	
+-- pode ser que de erro aqui
+UPDATE jogadores
+SET 
+    top_agents_1 = REPLACE(REPLACE(top_agents_1, '{', ''), '}', ''),
+    top_matches_agent_1 = REPLACE(REPLACE(REPLACE(top_matches_agent_1, '{', ''), '}', ''), '"', ''),
+    top_kd_agent_1 = REPLACE(REPLACE(top_kd_agent_1, '{', ''), '}', ''),
+    clutches = REPLACE(REPLACE(clutches, '{', ''), '}', ''),
+    kills_round = REPLACE(REPLACE(kills_round, '{', ''), '}', ''),
+    kad_ratio = REPLACE(REPLACE(kad_ratio, '{', ''), '}', '');
+
+UPDATE jogadores
+SET top_matches_agent_1 = REPLACE(top_matches_agent_1, ',', '.')
+WHERE top_matches_agent_1 LIKE '%,%';
+
+UPDATE jogadores
+SET clutches = REPLACE(clutches, ',', '.');
+
+UPDATE jogadores
+SET clutches = REPLACE(REPLACE(clutches, '"', ''), ',', '.');
