@@ -959,10 +959,11 @@
                 <div class="col-7">
                   <div id="all-earnings-graph"></div>
                 </div>
+                <!-- pegando do vetor 6 -->
                 <div class="col-5">
-                  <h5 class="mb-1"><%= jogadoresData[6].matches %> <i class="fa-solid fa-trophy" style="color: #4680FF;"></i></h5>
+                  <h5 class="mb-1"><%= jogadoresData[16].matches %> <i class="fa-solid fa-trophy" style="color: #4680FF;"></i></h5>
                   <p class="text-primary mb-0"><i class="ti ti-arrow-up-right"></i>
-                    <%= jogadoresData[6].win %>%
+                    <%= jogadoresData[16].win %>%
                   </p>
                 </div>
               </div>
@@ -999,10 +1000,11 @@
                   <div id="page-views-graph"></div>
                 </div>
                 <div class="col-5">
-                  <h5 class="mb-1"><%= porcenVitAgent[2]['Top Matches Agente 1'] %> <i class="fa-solid fa-trophy" style="color: #e58a00;"></i>
+                  <!-- pegando do vetor 2 -->
+                  <h5 class="mb-1"><%= porcenVitAgent[12]['Top Matches Agente 1'] %> <i class="fa-solid fa-trophy" style="color: #e58a00;"></i>
                   </h5>
                   <p class="text-warning mb-0"><i class="ti ti-arrow-up-right"></i>
-                    <%=  porcenVitAgent[2]['Top Win Agente 1'] %>
+                    <%=  porcenVitAgent[12]['Top Win Agente 1'] %>
                   </p>
                 </div>
               </div>
@@ -1111,7 +1113,7 @@
       <div class="col-lg-3">
         <div class="card">
           <div class="card-header">
-            <h5 class="mb-0">Project - Able Pro</h5>
+            <h5 class="mb-0">Project - T4F</h5>
           </div>
           <div class="card-body">
             <div class="mb-4">
@@ -1226,12 +1228,6 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 col-xl-4">
-                <div class="mt-3 d-grid">
-                  <button class="btn btn-primary d-flex align-items-center justify-content-center"><i
-                      class="ti ti-plus"></i> Add project</button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -1280,7 +1276,7 @@
         <div class="card">
           <div class="card-body border-bottom pb-0">
             <div class="d-flex align-items-center justify-content-between">
-              <h5 class="mb-0">Transactions</h5>
+              <h5 class="mb-0">Valorant</h5>
               <div class="dropdown">
                 <a class="avtar avtar-s btn-link-secondary dropdown-toggle arrow-none" href="#"
                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1297,17 +1293,17 @@
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="analytics-tab-1" data-bs-toggle="tab"
                   data-bs-target="#analytics-tab-1-pane" type="button" role="tab" aria-controls="analytics-tab-1-pane"
-                  aria-selected="true">All Transaction</button>
+                  aria-selected="true">Jogadores</button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="analytics-tab-2" data-bs-toggle="tab"
                   data-bs-target="#analytics-tab-2-pane" type="button" role="tab" aria-controls="analytics-tab-2-pane"
-                  aria-selected="false">Success</button>
+                  aria-selected="false">Vitórias</button>
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="analytics-tab-3" data-bs-toggle="tab"
                   data-bs-target="#analytics-tab-3-pane" type="button" role="tab" aria-controls="analytics-tab-3-pane"
-                  aria-selected="false">Pending</button>
+                  aria-selected="false">Derrotas</button>
               </li>
             </ul>
           </div>
@@ -1318,17 +1314,17 @@
                 <li class="list-group-item">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <div class="avtar avtar-s border"> AI </div>
+                      <div class="avtar avtar-s border"> <img src="../../public/images/user/Jett.png" class="jogadores-personagens" /> </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0">Apple Inc.</h6>
-                          <p class="text-muted mb-0"><small>#ABLE-PRO-T00232</small></p>
+                          <h6 class="mb-0"><%= jogadoresData[0].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[0].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1">$210,000</h6>
-                          <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> 10.6%</p>
+                          <h6 class="mb-1"><%= jogadoresData[0].matches %> <small>Partidas</small></h6>
+                          <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i><%= jogadoresData[0].kills %> <small>kills</small></p>
                         </div>
                       </div>
                     </div>
@@ -1338,17 +1334,17 @@
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
                       <div class="avtar avtar-s border" data-bs-toggle="tooltip" data-bs-title="10,000 Tracks">
-                        <span>SM</span></div>
+                        <img src="../../public/images/user/raze.png" class="jogadores-personagens" /></div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0">Spotify Music</h6>
-                          <p class="text-muted mb-0"><small>#ABLE-PRO-T10232</small></p>
+                          <h6 class="mb-0"><%= jogadoresData[1].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[1].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1">- 10,000</h6>
-                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> 30.6%</p>
+                          <h6 class="mb-1"><%= jogadoresData[1].matches %> <small>Partidas</small></h6>
+                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> <%= jogadoresData[1].kills %> <small>Kills</small></p>
                         </div>
                       </div>
                     </div>
@@ -1358,18 +1354,18 @@
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
                       <div class="avtar avtar-s border bg-light-primary" data-bs-toggle="tooltip"
-                        data-bs-title="143 Posts"><span>MD</span>
+                        data-bs-title="143 Posts"><img src="../../public/images/user/Omen.png" class="jogadores-personagens" />
                       </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0">Medium</h6>
-                          <p class="text-muted mb-0"><small>06:30 pm</small></p>
+                          <h6 class="mb-0"><%= jogadoresData[2].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[2].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1">-26</h6>
-                          <p class="text-warning mb-0"><i class="ti ti-arrows-left-right"></i> 5%</p>
+                          <h6 class="mb-1"><%= jogadoresData[2].matches %> <small>Partidas</small></h6>
+                          <p class="text-warning mb-0"><i class="ti ti-arrows-left-right"></i> <%= jogadoresData[2].matches %> <small>kills</small></p>
                         </div>
                       </div>
                     </div>
@@ -1379,17 +1375,17 @@
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
                       <div class="avtar avtar-s border" data-bs-toggle="tooltip" data-bs-title="143 Posts">
-                        <span>U</span> </div>
+                        <img src="../../public/images/user/Viper.png" class="jogadores-personagens" /> </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0">Uber</h6>
-                          <p class="text-muted mb-0"><small>08:40 pm</small></p>
+                          <h6 class="mb-0"><%= jogadoresData[3].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[3].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1">+210,000</h6>
-                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> 10.6%</p>
+                          <h6 class="mb-1"><%= jogadoresData[3].matches%> <small>Partidas</small></h6>
+                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> <%= jogadoresData[3].kills%> <small>kills</small></p>
                         </div>
                       </div>
                     </div>
@@ -1399,18 +1395,18 @@
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
                       <div class="avtar avtar-s border bg-light-warning" data-bs-toggle="tooltip"
-                        data-bs-title="143 Posts"><span>OC</span>
+                        data-bs-title="143 Posts"><img src="../../public/images/user/gekko.png" class="jogadores-personagens" />
                       </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0">Ola Cabs</h6>
-                          <p class="text-muted mb-0"><small>07:40 pm</small></p>
+                          <h6 class="mb-0"><%= jogadoresData[4].username%></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[4].tag%></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1">+210,000</h6>
-                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> 10.6%</p>
+                          <h6 class="mb-1"><%= jogadoresData[4].matches%> <small>Partidas</small></h6>
+                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> <%= jogadoresData[4].kills %>  <small>Kills</small></p>
                         </div>
                       </div>
                     </div>
@@ -1629,22 +1625,6 @@
                   </div>
                 </li>
               </ul>
-            </div>
-          </div>
-          <div class="card-footer">
-            <div class="row g-2">
-              <div class="col-md-6">
-                <div class="d-grid">
-                  <button class="btn btn-outline-secondary d-grid"><span class="text-truncate w-100">View all
-                      Transaction History</span></button>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-grid">
-                  <button class="btn btn-primary d-grid"><span class="text-truncate w-100">Create new
-                      Transaction</span></button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
