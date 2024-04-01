@@ -176,7 +176,7 @@ function floatchart() {
         }
       },
       stroke: { curve: 'smooth', width: 2 },
-      series: [{ data: [5, 25, 3, 10, 4, 50, 0] }]
+      series: [{ data: [6, 10, 5, 8, 4, 10, 7] }]
     };
     var chart = new ApexCharts(document.querySelector('#total-tasks-graph'), options6);
     chart.render();
