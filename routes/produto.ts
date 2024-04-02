@@ -5,18 +5,7 @@ import { Request, Response } from 'express';
 
 class LivroRoute {
 
-    private pool: Pool;
 
-    constructor() {
-        // Configurações de conexão com o banco de dados
-        this.pool = new Pool({
-			user: 'postgres',
-			host: 'localhost',
-			database: 'teste',
-			password: 'root',
-			port: 5432, // Porta padrão do PostgreSQL
-        });
-    }
 
     public async listarProduto(req: app.Request, res: app.Response) {
         try {
@@ -74,8 +63,33 @@ class LivroRoute {
     
     
     public async Analytics(req: app.Request, res: app.Response) {
-        
-		res.render("Dashboard/analytics");
+        try {
+            const responseJogadores = await axios.get('http://localhost:8080/jogador');
+            const jogadoresData = responseJogadores.data;
+    
+            const responsePorcenVitoria = await axios.get('http://localhost:8080/jogador/porcen-vitoria');
+            const porcenVitoria = responsePorcenVitoria.data;
+
+            const responsePorcenVitAgente = await axios.get('http://localhost:8080/jogador/porcenVitAgent');
+            const porcenVitAgent = responsePorcenVitAgente.data;
+    
+            const responseTotalJogadores = await axios.get('http://localhost:8080/jogador/total-jogadores');
+            const totalJogadores = responseTotalJogadores.data;
+
+            const responseHeadshotAcima30 = await axios.get('http://localhost:8080/jogador/jogadorHeadshotAcima30');
+            const headshotAcima30 = responseHeadshotAcima30.data;
+
+            res.render("Dashboard/analytics", {
+                jogadoresData: jogadoresData,
+                porcenVitoria: porcenVitoria,
+                porcenVitAgent: porcenVitAgent,
+                totalJogadores: totalJogadores,
+                headshotAcima30: headshotAcima30
+            });
+        } catch (error) {
+            console.error('Erro ao obter produtos:', error);
+            res.status(500).send('Erro interno do servidor');
+        }
 	}
     
     public async Statistics(req: app.Request, res: app.Response) {
