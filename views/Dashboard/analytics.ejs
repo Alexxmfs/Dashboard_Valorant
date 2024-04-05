@@ -979,7 +979,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between">
-                  <h5 class="mb-0">New Orders</h5>
+                  <h5 class="mb-0">Derrotas: <%= jogadoresData[0].username %></h5>
                   <select class="form-select rounded-3 form-select-sm w-auto">
                     <option>Today</option>
                     <option>Weekly</option>
@@ -989,7 +989,7 @@
                 <div class="my-3">
                   <div id="new-orders-graph"></div>
                   <h5 class="text-center mt-3"
-                    ><%= jogadoresData[0].loses %> <small class="text-primary"><i class="ti ti-arrow-up-right"></i> 30.6%</small></h5
+                    ><%= jogadoresData[0].loses %> <small class="text-primary"><i class="ti ti-arrow-up-right"></i> <%= jogadoresData[0].win %> </small></h5
                   >
                 </div>
                 <div class="d-grid">

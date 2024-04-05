@@ -262,7 +262,7 @@ function floatchart() {
       plotOptions: { bar: { borderRadius: 4, columnWidth: '80%' } },
       series: [
         {
-          data: [10, 30, 40, 20, 60, 50, 20, 15, 20, 25, 30, 25]
+          data: [10, 18, 15, 9, 6, 12, 19, 5, 4, 20, 10, 17]
         }
       ],
       xaxis: { crosshairs: { width: 1 } },
