@@ -195,3 +195,15 @@ SET clutches = REPLACE(clutches, ',', '.');
 
 UPDATE jogadores
 SET clutches = REPLACE(REPLACE(clutches, '"', ''), ',', '.');
+
+delete from jogadores where playtime = 0;
+
+delete from jogadores where matches = 0;
+
+delete from jogadores where level = '0';
+
+delete from jogadores where loses = '0';
+
+delete from jogadores where wins = 0;
+
+delete from jogadores where kills = 0;
