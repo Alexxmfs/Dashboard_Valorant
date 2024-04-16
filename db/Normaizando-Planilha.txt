@@ -1,0 +1,26 @@
+Drop table maps;
+create table maps(
+MapName char(255),
+MapID SERIAL
+)
+
+Insert into maps select Distinct top_maps_1 from jogadores
+
+UPDATE jogadores
+SET top_maps_1 = maps.MapID
+FROM maps
+WHERE jogadores.top_maps_1 = maps.MapName;
+
+
+Drop table Weapon
+create table Weapon(
+WeaponName char(255) ,
+WeaponID SERIAL
+)
+
+Insert into Weapon select Distinct top_Weapon_2 from jogadores
+
+UPDATE jogadores
+SET top_Weapon_2 = Weapon.WeaponID
+FROM Weapon
+WHERE jogadores.top_Weapon_2 = Weapon.WeaponName;
