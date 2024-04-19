@@ -64,6 +64,13 @@ CREATE TABLE IF NOT EXISTS public.jogadores
 );
 ```
 
+Execute os comandos:
+
+```bash
+tsc
+npm start
+```
+
 ## Uso
 
 1. Após a instalação das dependências, execute o comando npm start para iniciar o servidor de desenvolvimento.
