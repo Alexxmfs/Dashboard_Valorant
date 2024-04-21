@@ -444,21 +444,21 @@ function floatchart() {
       },
       series: [
         {
-          name: 'Net Profit',
-          data: [76, 85, 101, 98, 87, 105, 91]
+          name: 'Vitórias',
+          data: [1629, 1468, 2176, 3555, 1300, 4670, 769]
         },
         {
-          name: 'Revenue',
-          data: [44, 55, 57, 56, 61, 58, 63]
+          name: 'Horas Jogadas',
+          data: [508, 256, 929, 1918, 290, 754, 298]
         }
       ],
       xaxis: {
-        categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug']
+        categories: ['Jett', 'Omen', 'Sage', 'Reyna', 'Sova', 'Viper', 'Killjoy']
       },
       tooltip: {
         y: {
           formatter: function (val) {
-            return '$ ' + val + ' thousands';
+            return ' ' + val + '';
           }
         }
       }
