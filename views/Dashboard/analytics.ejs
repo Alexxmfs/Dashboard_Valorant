@@ -1055,22 +1055,6 @@
                 <button class="nav-link active" id="analytics-tab-1" data-bs-toggle="tab"
                   data-bs-target="#analytics-tab-1-pane" type="button" role="tab" aria-controls="analytics-tab-1-pane"
                   aria-selected="true">Overview</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="analytics-tab-2" data-bs-toggle="tab"
-                  data-bs-target="#analytics-tab-2-pane" type="button" role="tab" aria-controls="analytics-tab-2-pane"
-                  aria-selected="false">Marketing</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="analytics-tab-3" data-bs-toggle="tab"
-                  data-bs-target="#analytics-tab-3-pane" type="button" role="tab" aria-controls="analytics-tab-3-pane"
-                  aria-selected="false">Project</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="analytics-tab-4" data-bs-toggle="tab"
-                  data-bs-target="#analytics-tab-4-pane" type="button" role="tab" aria-controls="analytics-tab-4-pane"
-                  aria-selected="false">Order</button>
-              </li>
             </ul>
           </div>
           <div class="card-body">
@@ -1134,18 +1118,18 @@
                     <div class="d-flex align-items-center">
                       <div class="flex-shrink-0">
                         <div class="avtar avtar-s bg-light-secondary">
-                          <i class="ti ti-chart-bar f-20"></i>
+                          <img src="../public/images/user/Jett.png" alt="user-image" class="avtar" />
                         </div>
                       </div>
                       <div class="flex-grow-1 ms-3">
                         <div class="row g-1">
                           <div class="col-6">
-                            <p class="text-muted mb-1">Total Sales</p>
-                            <h6 class="mb-0">1,800</h6>
+                            <p class="text-muted mb-1"><%= jogadoresData[0].username %></p>
+                            <h6 class="mb-0"><%= jogadoresData[0].wins %></h6>
                           </div>
                           <div class="col-6 text-end">
-                            <h6 class="mb-1">- 245</h6>
-                            <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> 30.6%</p>
+                            <h6 class="mb-1"><%= jogadoresData[0].top_hours_agent_1 %>h</h6>
+                            <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[0].win %></p>
                           </div>
                         </div>
                       </div>
@@ -1155,18 +1139,18 @@
                     <div class="d-flex align-items-center">
                       <div class="flex-shrink-0">
                         <div class="avtar avtar-s bg-light-secondary">
-                          <i class="ti ti-chart-arrows-vertical f-20"></i>
+                          <img src="../public/images/user/Omen.png" alt="user-image" class="avtar" />
                         </div>
                       </div>
                       <div class="flex-grow-1 ms-3">
                         <div class="row g-1">
                           <div class="col-6">
-                            <p class="text-muted mb-1">Revenue</p>
-                            <h6 class="mb-0">$5667</h6>
+                            <p class="text-muted mb-1"><%= jogadoresData[15].username %></p>
+                            <h6 class="mb-0"><%= jogadoresData[15].wins %></h6>
                           </div>
                           <div class="col-6 text-end">
-                            <h6 class="mb-1">+$2100</h6>
-                            <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> 30.6%</p>
+                            <h6 class="mb-1"><%= jogadoresData[15].top_hours_agent_1 %>h</h6>
+                            <p class="text-success mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[15].win %></p>
                           </div>
                         </div>
                       </div>
@@ -1176,18 +1160,18 @@
                     <div class="d-flex align-items-center">
                       <div class="flex-shrink-0">
                         <div class="avtar avtar-s bg-light-secondary">
-                          <i class="ti ti-shopping-cart f-20"></i>
+                          <img src="../public/images/user/Sage.png" alt="user-image" class="avtar" />
                         </div>
                       </div>
                       <div class="flex-grow-1 ms-3">
                         <div class="row g-1">
                           <div class="col-6">
-                            <p class="text-muted mb-1">Abandon Cart</p>
-                            <h6 class="mb-0">128</h6>
+                            <p class="text-muted mb-1"><%= jogadoresData[3].username %></p>
+                            <h6 class="mb-0"><%= jogadoresData[3].wins %></h6>
                           </div>
                           <div class="col-6 text-end">
-                            <h6 class="mb-1">-26</h6>
-                            <p class="text-warning mb-0"><i class="ti ti-arrows-left-right"></i> 5%</p>
+                            <h6 class="mb-1"><%= jogadoresData[3].top_hours_agent_1 %>h</h6>
+                            <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[3].win %></p>
                           </div>
                         </div>
                       </div>
@@ -1197,18 +1181,18 @@
                     <div class="d-flex align-items-center">
                       <div class="flex-shrink-0">
                         <div class="avtar avtar-s bg-light-secondary">
-                          <i class="ti ti-ad f-20"></i>
+                          <img src="../public/images/user/Chamber.png" alt="user-image" class="avtar" />
                         </div>
                       </div>
                       <div class="flex-grow-1 ms-3">
                         <div class="row g-1">
                           <div class="col-6">
-                            <p class="text-muted mb-1">Ads Spent</p>
-                            <h6 class="mb-0">$2500</h6>
+                            <p class="text-muted mb-1"><%= jogadoresData[60].username %></p>
+                            <h6 class="mb-0"><%= jogadoresData[60].wins %></h6>
                           </div>
                           <div class="col-6 text-end">
-                            <h6 class="mb-1">$200</h6>
-                            <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> 10.6%</p>
+                            <h6 class="mb-1"><%= jogadoresData[60].top_hours_agent_1 %>h</h6>
+                            <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[60].win %></p>
                           </div>
                         </div>
                       </div>
