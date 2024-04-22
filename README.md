@@ -19,7 +19,7 @@ Este é o frontend do projeto de Dashboard para visualização dos dados de joga
 
 ## Instalação
 
-1. Certifique-se de ter o Node.js e o npm instalados em sua máquina. Você pode baixá-los aqui.
+1. Certifique-se de ter o Node.js e o npm instalados em sua máquina. 
 2. Clone ou baixe este repositório em sua máquina local.
 
 ## Configuração
@@ -85,12 +85,6 @@ npm start
 ## Licença
 
 Este projeto é licenciado sob a [MIT License](https://github.com/tech-espm/inter-2sem-2023-eventos/blob/main/LICENSE).
-
-<p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/react-v17.0.2-blue" alt="React Version"></a>
-  <a href="#"><img src="https://img.shields.io/badge/npm-v7.24.0-red" alt="npm Version"></a>
-  <a href="#"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
-</p>
 
 <h2><b>Tecnologias Utilizadas</b></h2>
 
