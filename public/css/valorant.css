@@ -3,3 +3,48 @@
     height: 50px;
     border-radius: 10px;
 }
+
+.dropdown-menu {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Adiciona sombra para dar profundidade */
+    border: none; /* Remove a borda padrão */
+    border-radius: 8px; /* Bordas arredondadas */
+  }
+  
+  /* Estilização da barra de pesquisa */
+  #searchInput {
+    width: 100%;
+    padding: 12px 20px; /* Ajusta o espaçamento interno para ser mais generoso */
+    border: 2px solid #007bff; /* Faz a borda mais destacada com cor azul */
+    border-radius: 8px; /* Bordas fortemente arredondadas para suavidade */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Sombra interna para profundidade */
+    font-size: 16px; /* Aumenta o tamanho da fonte para melhorar a leitura */
+  }
+  
+  /* Estilização das sugestões */
+  #suggestionsList {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #007bff; /* Faz a borda mais destacada e consistente com a barra de busca */
+    border-radius: 0 0 8px 8px; /* Arredondamento na parte inferior para continuidade do design */
+    max-height: 200px;
+    overflow-y: auto;
+    background: #ffffff; /* Faz o fundo ser explicitamente branco para suporte em diferentes temas */
+  }
+  
+  #suggestionsList div {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    list-style-type: none;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s; /* Adiciona transição para o hover ser mais suave */
+  }
+  
+  #suggestionsList div:last-child {
+    border-bottom: none;
+  }
+  
+  #suggestionsList div:hover {
+    background-color: #007bff; /* Cor mais vibrante ao passar o mouse */
+    color: #ffffff; /* Texto fica branco para contraste */
+  }

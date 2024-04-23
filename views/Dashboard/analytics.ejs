@@ -508,8 +508,9 @@
           </a>
           <div class="dropdown-menu pc-h-dropdown drp-search">
             <form class="px-3 py-2">
-              <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . ." />
-            </form>
+              <input type="search" id="searchInput" class="form-control border-0 shadow-none" placeholder="Search here..." oninput="suggestUsernames()" />
+            </form>          
+            <ul id="suggestionsList"></ul>
           </div>
         </li>
       </ul>
@@ -1692,6 +1693,31 @@
     </div>
   </div>
 </div>
+
+<script>
+  async function suggestUsernames() {
+      const query = document.getElementById('searchInput').value; // Obtenha o valor do campo de pesquisa
+      const suggestions = await fetchSuggestions(query); // Obtenha sugestões de nomes de usuários do servidor
+      displaySuggestions(suggestions); // Exiba as sugestões no campo de entrada
+  }
+
+  async function fetchSuggestions(query) {
+      const response = await fetch(`/jogador/search?query=${query}`); // Faça uma solicitação ao servidor para obter sugestões de nomes de usuários
+      return response.json(); // Retorne os resultados da solicitação como JSON
+  }
+
+  function displaySuggestions(suggestions) {
+      const suggestionsList = document.getElementById('suggestionsList'); // Obtenha a lista de sugestões
+      suggestionsList.innerHTML = ''; // Limpe a lista de sugestões
+
+      suggestions.forEach(suggestion => { // Para cada sugestão de nome de usuário
+          const listItem = document.createElement('li'); // Crie um elemento de lista
+          listItem.textContent = suggestion.username; // Defina o texto do elemento de lista como o nome de usuário
+          suggestionsList.appendChild(listItem); // Adicione o elemento de lista à lista de sugestões
+      });
+  }
+</script>
+
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-14K1GBX9FG"></script>
 <script>

@@ -503,8 +503,9 @@
           </a>
           <div class="dropdown-menu pc-h-dropdown drp-search">
             <form class="px-3 py-2">
-              <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . ." />
+              <input type="search" id="searchInput" class="form-control border-0 shadow-none" placeholder="Search here..." oninput="suggestUsernames()" />
             </form>
+            <div id="suggestionsList" class="list-unstyled mt-2"></div>
           </div>
         </li>
       </ul>
@@ -1915,65 +1916,44 @@
   </div>
 </div>
 
-
 <script>
-  // const fileInput = document.getElementById('imagem');
-  // const dropArea = document.getElementById("drop-area");
-  // const imageView = document.getElementById("img-view");
+  async function suggestUsernames() {
+    const query = document.getElementById('searchInput').value;
+    if (query.trim() === '') {
+      clearSuggestions();
+      return;
+    }
+    try {
+      const suggestions = await fetchSuggestions(query);
+      displaySuggestions(suggestions);
+    } catch (error) {
+      console.error('Erro ao buscar sugestões:', error);
+      clearSuggestions();
+    }
+  }
 
-  // async function cadastrar(form) {
-  //   waitSwal();
+  async function fetchSuggestions(query) {
+    const response = await fetch(`http://localhost:8080/jogador/search?username=${encodeURIComponent(query)}`);
+    if (!response.ok) {
+      throw new Error('Erro ao buscar sugestões');
+    }
+    return response.json();
+  }
 
-  //   try {
-  //     const response = await fetch("localhost:8080/produto", {
-  //       method: "post",
-  //       body: new FormData(form),
-  //     });
+  function displaySuggestions(suggestions) {
+  const suggestionsList = document.getElementById('suggestionsList');
+  suggestionsList.innerHTML = ''; // Limpa as sugestões anteriores
 
-  //     if (!response.ok) {
-  //       await exibirErro(response);
-  //       return;
-  //     }
+  suggestions.forEach(suggestion => {
+    const listItem = document.createElement('div');
+    listItem.textContent = suggestion.username;
+    suggestionsList.appendChild(listItem);
+  });
+}
 
-  //     Swal.fire({
-  //       icon: 'success',
-  //       title: `Produto adicionado com sucesso`,
-  //     })
-  //   } catch (ex) {
-  //     Swal.fire({
-  //       icon: 'error',
-  //       title: `Erro ao cadastrar o produto: ${ex.message}`,
-  //     })
-  //   }
-  // }
-  // $(function () {
-  //   const formCadastro = $("#formCadastro")
-
-  //   formCadastro.validate({
-  //     rules: {
-  //       titulo: {
-  //         required: true,
-  //       },
-  //       descricao: {
-  //         required: true,
-  //       },
-  //       autor: {
-  //         required: true,
-  //       },
-  //       categoria: {
-  //         required: true,
-  //       },
-  //       ano: {
-  //         required: true,
-  //       },
-  //       imagem: {
-  //         required: true,
-  //       },
-  //     },
-  //     submitHandler: function (form) {
-  //       cadastrar(form)
-  //     }
-  //   });
-  // });
-
+  function clearSuggestions() {
+    const suggestionsList = document.getElementById('suggestionsList');
+    suggestionsList.innerHTML = '';
+  }
 </script>
+

@@ -23,6 +23,17 @@ class LivroRoute {
         }
     };
 
+    public async searchJogadores(req: Request, res: Response): Promise<void> {
+        try {
+            const query = req.query.query as string; // Obtenha o termo de pesquisa do query string
+            const response = await axios.get(`http://localhost:8080/jogador/search?username=${query}`);
+            const jogadoresData = response.data;
+            res.render("Dashboard/index", { jogadoresData: jogadoresData });
+        } catch (error) {
+            console.error('Erro ao buscar jogadores:', error);
+            res.status(500).send('Erro ao buscar jogadores');
+        }
+    }
     
     public async criarProduto(req: app.Request, res: app.Response) {
 		res.render("index/criar");
