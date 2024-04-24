@@ -5,7 +5,19 @@ import { Request, Response } from 'express';
 
 class LivroRoute {
 
-
+    public async perfil(req: app.Request, res: app.Response): Promise<void> {
+        try {
+            const id: number = parseInt(req.query.id as string); // Obtenha o ID do jogador da query string
+            const response = await axios.get(`http://localhost:8080/jogador/player/${id}`); // Faça uma solicitação para obter os detalhes do jogador com o ID especificado
+            const jogador = response.data; // Extrai os detalhes do jogador da resposta
+    
+            // Renderiza a página EJS com os detalhes do jogador
+            res.render("Perfil/detalhes-jogador", { jogador }); // Passa os detalhes do jogador para a página EJS
+        } catch (error) {
+            console.error('Erro ao obter detalhes do jogador:', error);
+            res.status(500).send('Erro ao obter detalhes do jogador');
+        }
+    }
 
     public async listarProduto(req: app.Request, res: app.Response) {
         try {

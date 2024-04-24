@@ -1092,7 +1092,7 @@
                   <div id="download-graph"></div>
                 </div>
                 <div class="col-5">
-                  <h5 class="mb-1"><%= headshotAcima30[1].kills %>0 <i class="fa-solid fa-skull" style="color: #dc2626;"></i></h5>
+                  <h5 class="mb-1"><%= headshotAcima30[1].kills %> <i class="fa-solid fa-skull" style="color: #dc2626;"></i></h5>
                   <p class="text-danger mb-0"><i class="ti ti-arrow-up-right"></i> <%= headshotAcima30[1].headshot %></p>
                 </div>
               </div>
@@ -1941,15 +1941,19 @@
   }
 
   function displaySuggestions(suggestions) {
-  const suggestionsList = document.getElementById('suggestionsList');
-  suggestionsList.innerHTML = ''; // Limpa as sugestões anteriores
+    const suggestionsList = document.getElementById('suggestionsList');
+    suggestionsList.innerHTML = ''; // Limpa as sugestões anteriores
 
-  suggestions.forEach(suggestion => {
-    const listItem = document.createElement('div');
-    listItem.textContent = suggestion.username;
-    suggestionsList.appendChild(listItem);
-  });
-}
+    suggestions.forEach(suggestion => {
+      const link = document.createElement('a');
+      link.textContent = suggestion.username;
+      const playerId = parseInt(suggestion.id); // Converta o ID para número
+      link.href = `/produto/perfil?id=${playerId}`; // Passa o ID como parâmetro de consulta
+      link.classList.add('dropdown-item'); // Adicione a classe para estilização, se necessário
+      // Você pode precisar de um EventListener ou método similar caso a navegação não seja direta
+      suggestionsList.appendChild(link);
+    });
+  }
 
   function clearSuggestions() {
     const suggestionsList = document.getElementById('suggestionsList');
