@@ -1,24 +1,23 @@
-Drop table maps;
+Drop table If Exists maps;
 create table maps(
 MapName char(255),
 MapID SERIAL
-)
+);
 
-Insert into maps select Distinct top_maps_1 from jogadores
+Insert into maps select Distinct top_maps_1 from jogadores;
 
 UPDATE jogadores
 SET top_maps_1 = maps.MapID
 FROM maps
 WHERE jogadores.top_maps_1 = maps.MapName;
 
-
-Drop table Weapon
+Drop table If Exists Weapon;
 create table Weapon(
 WeaponName char(255) ,
 WeaponID SERIAL
-)
+);
 
-Insert into Weapon select Distinct top_Weapon_2 from jogadores
+Insert into Weapon select Distinct top_Weapon_2 from jogadores;
 
 UPDATE jogadores
 SET top_Weapon_2 = Weapon.WeaponID
