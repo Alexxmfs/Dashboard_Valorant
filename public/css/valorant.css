@@ -48,3 +48,7 @@
     background-color: #007bff; /* Cor mais vibrante ao passar o mouse */
     color: #ffffff; /* Texto fica branco para contraste */
   }
+
+.tirar-paddign {
+  padding: 0;
+}

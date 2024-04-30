@@ -1,83 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- [Head] start -->
-
-<head>
-  <title>Account Profile 1 | Able Pro Dashboard Template</title>
-  <!-- [Meta] -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Able Pro is trending dashboard template made using Bootstrap 5 design framework. Able Pro is available in Bootstrap, React, CodeIgniter, Angular,  and .net Technologies.">
-  <meta name="keywords" content="Bootstrap admin template, Dashboard UI Kit, Dashboard Template, Backend Panel, react dashboard, angular dashboard">
-  <meta name="author" content="Phoenixcoded">
-
-  <!-- [Favicon] icon -->
-  <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon"> <!-- [Font] Family -->
-<link rel="stylesheet" href="../assets/fonts/inter/inter.css" id="main-font-link" />
-<!-- [Tabler Icons] https://tablericons.com -->
-<link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css" >
-<!-- [Feather Icons] https://feathericons.com -->
-<link rel="stylesheet" href="../assets/fonts/feather.css" >
-<!-- [Font Awesome Icons] https://fontawesome.com/icons -->
-<link rel="stylesheet" href="../assets/fonts/fontawesome.css" >
-<!-- [Material Icons] https://fonts.google.com/icons -->
-<link rel="stylesheet" href="../assets/fonts/material.css" >
-<!-- [Template CSS Files] -->
-<link rel="stylesheet" href="../assets/css/style.css" id="main-style-link" >
-<link rel="stylesheet" href="../assets/css/style-preset.css" >
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-14K1GBX9FG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-
-  gtag('config', 'G-14K1GBX9FG');
-</script>
-<!-- WiserNotify -->
-<script>
-  !(function () {
-    if (window.t4hto4) console.log('WiserNotify pixel installed multiple time in this page');
-    else {
-      window.t4hto4 = !0;
-      var t = document,
-        e = window,
-        n = function () {
-          var e = t.createElement('script');
-          (e.type = 'text/javascript'),
-            (e.async = !0),
-            (e.src = 'https://pt.wisernotify.com/pixel.js?ti=1jclj6jkfc4hhry'),
-            document.body.appendChild(e);
-        };
-      'complete' === t.readyState ? n() : window.attachEvent ? e.attachEvent('onload', n) : e.addEventListener('load', n, !1);
-    }
-  })();
-</script>
-<!-- Microsoft clarity -->
-<script type="text/javascript">
-  (function (c, l, a, r, i, t, y) {
-    c[a] =
-      c[a] ||
-      function () {
-        (c[a].q = c[a].q || []).push(arguments);
-      };
-    t = l.createElement(r);
-    t.async = 1;
-    t.src = 'https://www.clarity.ms/tag/' + i;
-    y = l.getElementsByTagName(r)[0];
-    y.parentNode.insertBefore(t, y);
-  })(window, document, 'clarity', 'script', 'gkn6wuhrtb');
-</script>
-
-</head>
-<!-- [Head] end -->
-<!-- [Body] Start -->
-
-<body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-direction="ltr" data-pc-theme_contrast="" data-pc-theme="light">
-  <!-- [ Pre-loader ] start -->
 <div class="loader-bg">
   <div class="loader-track">
     <div class="loader-fill"></div>
@@ -848,8 +768,9 @@
       </a>
       <div class="dropdown-menu pc-h-dropdown drp-search">
         <form class="px-3 py-2">
-          <input type="search" class="form-control border-0 shadow-none" placeholder="Search here. . ." />
+          <input type="search" id="searchInput" class="form-control border-0 shadow-none" placeholder="Search here..." oninput="suggestUsernames()" />
         </form>
+        <div id="suggestionsList" class="list-unstyled mt-2"></div>
       </div>
     </li>
   </ul>
@@ -1302,11 +1223,21 @@
                 <li class="breadcrumb-item" aria-current="page">Account Profile</li>
               </ul>
             </div>
-            <div class="col-md-12">
-              <div class="page-header-title">
-                <h2 class="mb-0">Account Profile</h2>
-              </div>
-            </div>
+
+            <!-- <div class="page-header-title">
+              <div class="col-mb-12">
+                <div class="align-items-center">
+                  <div class="tirar-padding d-flex align-items-center">
+                    <span data-feather="user"></span>
+                    <span class="mb-0"><h2>Perfil da Conta</h2></span>
+                  </div> -->
+
+                  <div class="col-md-12">
+                    <div class="page-header-title">
+                      <h2 class="mb-0">Account Profile</h2>
+                    </div>
+                  </div>
+                  
           </div>
         </div>
       </div>
@@ -1321,28 +1252,28 @@
                 <li class="nav-item">
                   <a class="nav-link active" id="profile-tab-1" data-bs-toggle="tab" href="#profile-1" role="tab"
                     aria-selected="true">
-                    <i class="ti ti-user me-2"></i>Profile
+                    <i class="ti ti-user me-2"></i>Visão geral
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="profile-tab-2" data-bs-toggle="tab" href="#profile-2" role="tab"
                     aria-selected="true">
-                    <i class="ti ti-file-text me-2"></i>Personal Details
+                    <i class="ti me-2" data-feather="map"></i>Mapas
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="profile-tab-3" data-bs-toggle="tab" href="#profile-3" role="tab"
                     aria-selected="true">
-                    <i class="ti ti-id me-2"></i>My Account
+                    <i class="ti me-2" data-feather="crosshair"></i>Armas
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="profile-tab-4" data-bs-toggle="tab" href="#profile-4" role="tab"
                     aria-selected="true">
-                    <i class="ti ti-lock me-2"></i>Change Password
+                    <i class="ti me-2" data-feather="users"></i>Agente
                   </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a class="nav-link" id="profile-tab-5" data-bs-toggle="tab" href="#profile-5" role="tab"
                     aria-selected="true">
                     <i class="ti ti-users me-2"></i>Role
@@ -1353,16 +1284,98 @@
                     aria-selected="true">
                     <i class="ti ti-settings me-2"></i>Settings
                   </a>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
           <div class="tab-content">
             <div class="tab-pane show active" id="profile-1" role="tabpanel" aria-labelledby="profile-tab-1">
-              <div class="row">
+              
+              <!-- ------ -->
+
+              <div class="card">
+                <div class="card-body position-relative card-maior">
+                  <div class="position-absolute end-0 top-0 p-3">
+                    <span class="badge bg-primary horas"><%= jogador.playtime %>h Jogadas</span>
+                  </div>
+                  <div class="text-center mt-3">
+                    <div class="chat-avtar d-inline-flex mx-auto">
+                      <% 
+                        var images = [
+                            "../../public/images/user/breach.png",
+                            "../../public/images/user/brimstone.png",
+                            "../../public/images/user/chamber.png",
+                            "../../public/images/user/clove.png",
+                            "../../public/images/user/cypher.png",
+                            "../../public/images/user/deadlock.png",
+                            "../../public/images/user/fade.png",
+                            "../../public/images/user/gekko.png",
+                            "../../public/images/user/iso.png",
+                            "../../public/images/user/jett.png",
+                            "../../public/images/user/kayo.png",
+                            "../../public/images/user/killjoy.png",
+                            "../../public/images/user/neon.png",
+                            "../../public/images/user/omen.png",
+                            "../../public/images/user/raze.png",
+                            "../../public/images/user/reyna.png",
+                            "../../public/images/user/sage.png",
+                            "../../public/images/user/sova.png",
+                            "../../public/images/user/viper.png",
+                            "../../public/images/user/yoru.png",
+                        ];
+                        var randomIndex = Math.floor(Math.random() * images.length);
+                        var selectedImage = images[randomIndex];
+                    %>
+                      <img class="rounded-circle img-fluid wid-70" src="<%= selectedImage %>"
+                        alt="User image">
+                    </div>
+                    <h5 class="mb-0"><%= jogador.username %></h5>
+                    <p class="text-muted text-sm">#<%= jogador.tag %></p>
+                    <hr class="my-3 border border-secondary-subtle">
+                    <div class="row g-3">
+                      <div class="col-4">
+                        <h5 class="mb-0"><%= jogador.level %></h5>
+                        <small class="text-muted">Level</small>
+                      </div>
+                      <div class="col-4 border border-top-0 border-bottom-0">
+                        <h5 class="mb-0"><%= jogador.wins %></h5>
+                        <small class="text-muted">Vitórias</small>
+                      </div>
+                      <div class="col-4">
+                        <h5 class="mb-0"><%= jogador.loses %></h5>
+                        <small class="text-muted">Derrotas</small>
+                      </div>
+                    </div>
+                    <!-- <hr class="my-3 border border-secondary-subtle">
+                    <div class="d-inline-flex align-items-center justify-content-start w-100 mb-3">
+                      <i class="ti ti-mail me-2"></i>
+                      <p class="mb-0">anshan@gmail.com</p>
+                    </div>
+                    <div class="d-inline-flex align-items-center justify-content-start w-100 mb-3">
+                      <i class="ti ti-phone me-2"></i>
+                      <p class="mb-0">(+1-876) 8654 239 581</p>
+                    </div>
+                    <div class="d-inline-flex align-items-center justify-content-start w-100 mb-3">
+                      <i class="ti ti-map-pin me-2"></i>
+                      <p class="mb-0">New York</p>
+                    </div>
+                    <div class="d-inline-flex align-items-center justify-content-start w-100">
+                      <i class="ti ti-link me-2"></i>
+                      <a href="#" class="link-primary">
+                        <p class="mb-0">https://anshan.dh.url</p>
+                      </a>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              
+              
+              <!-- ------- -->
+
+              <!-- <div class="row">
                 <div class="col-lg-4 col-xxl-3">
                   <div class="card">
-                    <div class="card-body position-relative">
+                    <div class="card-body position-relative card-maior">
                       <div class="position-absolute end-0 top-0 p-3">
                         <span class="badge bg-primary horas"><%= jogador.playtime %>h Jogadas</span>
                       </div>
@@ -1435,98 +1448,98 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="card">
                     <div class="card-header">
-                      <h5>Skills</h5>
+                      <h5>Top Mapas</h5>
                     </div>
                     <div class="card-body">
                       <div class="row align-items-center mb-3">
                         <div class="col-sm-6 mb-2 mb-sm-0">
-                          <p class="mb-0">Junior</p>
+                          <p class="mb-0"><%= jogador.top_maps_1 %></p>
                         </div>
                         <div class="col-sm-6">
                           <div class="d-flex align-items-center">
                             <div class="flex-grow-1 me-3">
                               <div class="progress progress-primary " style="height: 6px;">
-                                <div class="progress-bar" style="width: 30%;"></div>
+                                <div class="progress-bar" style="width: <%= jogador.top_porcentagem_map_win_1 %>;"></div>
                               </div>
                             </div>
                             <div class="flex-shrink-0">
-                              <p class="mb-0 text-muted">30%</p>
+                              <p class="mb-0 text-muted"><%= jogador.top_porcentagem_map_win_1 %></p>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="row align-items-center mb-3">
                         <div class="col-sm-6 mb-2 mb-sm-0">
-                          <p class="mb-0">UX Researcher</p>
+                          <p class="mb-0"><%= jogador.top_maps_1 %></p>
                         </div>
                         <div class="col-sm-6">
                           <div class="d-flex align-items-center">
                             <div class="flex-grow-1 me-3">
                               <div class="progress progress-primary " style="height: 6px;">
-                                <div class="progress-bar" style="width: 80%;"></div>
+                                <div class="progress-bar" style="width: <%= jogador.top_porcentagem_map_win_1 %>;"></div>
                               </div>
                             </div>
                             <div class="flex-shrink-0">
-                              <p class="mb-0 text-muted">80%</p>
+                              <p class="mb-0 text-muted"><%= jogador.top_porcentagem_map_win_1 %></p>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="row align-items-center mb-3">
                         <div class="col-sm-6 mb-2 mb-sm-0">
-                          <p class="mb-0">Wordpress</p>
+                          <p class="mb-0"><%= jogador.top_maps_1 %></p>
                         </div>
                         <div class="col-sm-6">
                           <div class="d-flex align-items-center">
                             <div class="flex-grow-1 me-3">
                               <div class="progress progress-primary " style="height: 6px;">
-                                <div class="progress-bar" style="width: 90%;"></div>
+                                <div class="progress-bar" style="width: <%= jogador.top_porcentagem_map_win_1 %>;"></div>
                               </div>
                             </div>
                             <div class="flex-shrink-0">
-                              <p class="mb-0 text-muted">90%</p>
+                              <p class="mb-0 text-muted"><%= jogador.top_porcentagem_map_win_1 %></p>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="row align-items-center mb-3">
                         <div class="col-sm-6 mb-2 mb-sm-0">
-                          <p class="mb-0">HTML</p>
+                          <p class="mb-0"><%= jogador.top_maps_1 %></p>
                         </div>
                         <div class="col-sm-6">
                           <div class="d-flex align-items-center">
                             <div class="flex-grow-1 me-3">
                               <div class="progress progress-primary " style="height: 6px;">
-                                <div class="progress-bar" style="width: 30%;"></div>
+                                <div class="progress-bar" style="width: <%= jogador.top_porcentagem_map_win_1 %>;"></div>
                               </div>
                             </div>
                             <div class="flex-shrink-0">
-                              <p class="mb-0 text-muted">30%</p>
+                              <p class="mb-0 text-muted"><%= jogador.top_porcentagem_map_win_1 %></p>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="row align-items-center mb-3">
                         <div class="col-sm-6 mb-2 mb-sm-0">
-                          <p class="mb-0">Graphic Design</p>
+                          <p class="mb-0"><%= jogador.top_maps_1 %></p>
                         </div>
                         <div class="col-sm-6">
                           <div class="d-flex align-items-center">
                             <div class="flex-grow-1 me-3">
                               <div class="progress progress-primary " style="height: 6px;">
-                                <div class="progress-bar" style="width: 95%;"></div>
+                                <div class="progress-bar" style="width: <%= jogador.top_porcentagem_map_win_1 %>;"></div>
                               </div>
                             </div>
                             <div class="flex-shrink-0">
-                              <p class="mb-0 text-muted">95%</p>
+                              <p class="mb-0 text-muted"><%= jogador.top_porcentagem_map_win_1 %></p>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="row align-items-center">
+                      <!-- <div class="row align-items-center">
                         <div class="col-sm-6 mb-2 mb-sm-0">
                           <p class="mb-0">Code Style</p>
                         </div>
@@ -1542,7 +1555,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -2681,7 +2694,49 @@
       </div>
     </div>
   </div>
-</body>
-<!-- [Body] end -->
 
-</html>
+
+<script>
+  async function suggestUsernames() {
+    const query = document.getElementById('searchInput').value;
+    if (query.trim() === '') {
+      clearSuggestions();
+      return;
+    }
+    try {
+      const suggestions = await fetchSuggestions(query);
+      displaySuggestions(suggestions);
+    } catch (error) {
+      console.error('Erro ao buscar sugestões:', error);
+      clearSuggestions();
+    }
+  }
+
+  async function fetchSuggestions(query) {
+    const response = await fetch(`http://localhost:8080/jogador/search?username=${encodeURIComponent(query)}`);
+    if (!response.ok) {
+      throw new Error('Erro ao buscar sugestões');
+    }
+    return response.json();
+  }
+
+  function displaySuggestions(suggestions) {
+    const suggestionsList = document.getElementById('suggestionsList');
+    suggestionsList.innerHTML = ''; // Limpa as sugestões anteriores
+
+    suggestions.forEach(suggestion => {
+      const link = document.createElement('a');
+      link.textContent = suggestion.username;
+      const playerId = parseInt(suggestion.id); // Converta o ID para número
+      link.href = `/produto/perfil?id=${playerId}`; // Passa o ID como parâmetro de consulta
+      link.classList.add('dropdown-item'); // Adicione a classe para estilização, se necessário
+      // Você pode precisar de um EventListener ou método similar caso a navegação não seja direta
+      suggestionsList.appendChild(link);
+    });
+  }
+
+  function clearSuggestions() {
+    const suggestionsList = document.getElementById('suggestionsList');
+    suggestionsList.innerHTML = '';
+  }
+</script>

@@ -509,8 +509,8 @@
           <div class="dropdown-menu pc-h-dropdown drp-search">
             <form class="px-3 py-2">
               <input type="search" id="searchInput" class="form-control border-0 shadow-none" placeholder="Search here..." oninput="suggestUsernames()" />
-            </form>          
-            <ul id="suggestionsList"></ul>
+            </form>
+            <div id="suggestionsList" class="list-unstyled mt-2"></div>
           </div>
         </li>
       </ul>
@@ -1696,25 +1696,46 @@
 
 <script>
   async function suggestUsernames() {
-      const query = document.getElementById('searchInput').value; // Obtenha o valor do campo de pesquisa
-      const suggestions = await fetchSuggestions(query); // Obtenha sugestões de nomes de usuários do servidor
-      displaySuggestions(suggestions); // Exiba as sugestões no campo de entrada
+    const query = document.getElementById('searchInput').value;
+    if (query.trim() === '') {
+      clearSuggestions();
+      return;
+    }
+    try {
+      const suggestions = await fetchSuggestions(query);
+      displaySuggestions(suggestions);
+    } catch (error) {
+      console.error('Erro ao buscar sugestões:', error);
+      clearSuggestions();
+    }
   }
 
   async function fetchSuggestions(query) {
-      const response = await fetch(`/jogador/search?query=${query}`); // Faça uma solicitação ao servidor para obter sugestões de nomes de usuários
-      return response.json(); // Retorne os resultados da solicitação como JSON
+    const response = await fetch(`http://localhost:8080/jogador/search?username=${encodeURIComponent(query)}`);
+    if (!response.ok) {
+      throw new Error('Erro ao buscar sugestões');
+    }
+    return response.json();
   }
 
   function displaySuggestions(suggestions) {
-      const suggestionsList = document.getElementById('suggestionsList'); // Obtenha a lista de sugestões
-      suggestionsList.innerHTML = ''; // Limpe a lista de sugestões
+    const suggestionsList = document.getElementById('suggestionsList');
+    suggestionsList.innerHTML = ''; // Limpa as sugestões anteriores
 
-      suggestions.forEach(suggestion => { // Para cada sugestão de nome de usuário
-          const listItem = document.createElement('li'); // Crie um elemento de lista
-          listItem.textContent = suggestion.username; // Defina o texto do elemento de lista como o nome de usuário
-          suggestionsList.appendChild(listItem); // Adicione o elemento de lista à lista de sugestões
-      });
+    suggestions.forEach(suggestion => {
+      const link = document.createElement('a');
+      link.textContent = suggestion.username;
+      const playerId = parseInt(suggestion.id); // Converta o ID para número
+      link.href = `/produto/perfil?id=${playerId}`; // Passa o ID como parâmetro de consulta
+      link.classList.add('dropdown-item'); // Adicione a classe para estilização, se necessário
+      // Você pode precisar de um EventListener ou método similar caso a navegação não seja direta
+      suggestionsList.appendChild(link);
+    });
+  }
+
+  function clearSuggestions() {
+    const suggestionsList = document.getElementById('suggestionsList');
+    suggestionsList.innerHTML = '';
   }
 </script>
 

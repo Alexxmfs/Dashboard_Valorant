@@ -13,6 +13,7 @@ class LivroRoute {
     
             // Renderiza a página EJS com os detalhes do jogador
             res.render("Perfil/detalhes-jogador", { jogador }); // Passa os detalhes do jogador para a página EJS
+            console.log(jogador);
         } catch (error) {
             console.error('Erro ao obter detalhes do jogador:', error);
             res.status(500).send('Erro ao obter detalhes do jogador');
