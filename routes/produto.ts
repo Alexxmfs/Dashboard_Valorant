@@ -160,6 +160,24 @@ class LivroRoute {
     public async formCadastrar(req: Request, res: Response){
         res.render("forms/form_elements");
     }
+
+    public async register(req:Request, res: Response){
+        res.render("auth/register");
+    }
+
+    public async login(req: Request, res: Response) {
+        try {
+            res.render("auth/login");
+
+            // const response = await axios.post('http://localhost:8080/api/usuarios/login', req.body);
+            // const message = response.data;
+            // res.send(message);
+
+          } catch (error) {
+            res.send("Erro ao efetuar login!");
+          }
+    
+    }
 }
 
 export = LivroRoute;
