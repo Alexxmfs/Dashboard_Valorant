@@ -326,7 +326,7 @@ function floatchart() {
           data: [
             {
               x: '',
-              y: [1, 6]
+              y: [17, 6]
             },
             {
               x: '',
@@ -536,7 +536,7 @@ function floatchart() {
       plotOptions: { bar: { columnWidth: '80%' } },
       series: [
         {
-          data: [10, 30, 40, 20, 60, 50, 20, 15, 20, 25, 30, 25]
+          data: [10, 8, 12, 15, 6, 11, 13, 5, 4, 8, 16, 12]
         }
       ],
       xaxis: { crosshairs: { width: 1 } },
@@ -561,7 +561,7 @@ function floatchart() {
       plotOptions: { bar: { columnWidth: '80%' } },
       series: [
         {
-          data: [100, 140, 100, 250, 115, 125, 90, 100, 140, 100, 230, 115, 215, 90, 190, 100, 120, 180]
+          data: [175, 145, 95, 78, 60, 125, 90, 100, 140, 100, 130, 115, 105, 90, 120, 100, 120, 180]
         }
       ],
       xaxis: { crosshairs: { width: 1 } },

@@ -969,7 +969,7 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
-              <h5 class="mb-0">User: <%= jogadoresData[0].username %></h5>
+              <h5 class="mb-0">Wins: <%= jogadoresData[0].username %></h5>
               <select class="form-select rounded-3 form-select-sm w-auto">
                 <option><%= jogadoresData[2].username %></option>
                 <option><%= jogadoresData[1].username %></option>
@@ -1212,12 +1212,12 @@
               <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                   <div class="avtar avtar-s bg-light-secondary">
-                    <i class="ti ti-currency-dollar f-20"></i>
+                    <i class="ti ti-currency-dollar f-20"></i> 
                   </div>
                   <div class="dropdown">
                     <a class="avtar avtar-s btn-link-secondary dropdown-toggle arrow-none" href="#"
                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="ti ti-dots-vertical f-18"></i>
+                      <i class="ti ti-dots-vertical f-18"></i> 
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
                       <a class="dropdown-item" href="#">Name</a>
@@ -1227,8 +1227,8 @@
                     </div>
                   </div>
                 </div>
-                <h5 class="mb-0">$30,200.00</h5>
-                <p class="text-muted mb-0">Income</p>
+                <h5 class="mb-0"><span class="text-muted mb-0"><%= jogadoresData[61].username %>: </span><%= jogadoresData[60].assists %></h5>
+                <p class="text-muted mb-0">Assists</p>
                 <div class="mt-2">
                   <div id="income-graph"></div>
                 </div>
@@ -1239,7 +1239,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                  <h5 class="mb-0">Languages support</h5>
+                  <h5 class="mb-0">MVP por Personagem</h5>
                   <div class="dropdown">
                     <a class="avtar avtar-s btn-link-secondary dropdown-toggle arrow-none" href="#"
                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1268,16 +1268,16 @@
                 </div>
                 <div class="row g-2">
                   <div class="col-6">
-                    <div class="d-grid"><button class="btn btn-outline-secondary">React</button></div>
+                    <div class="d-grid"><button class="btn btn-outline-secondary">Chamber</button></div>
                   </div>
                   <div class="col-6">
-                    <div class="d-grid"><button class="btn btn-outline-secondary">Angular</button></div>
+                    <div class="d-grid"><button class="btn btn-outline-secondary">Jett</button></div>
                   </div>
                   <div class="col-6">
-                    <div class="d-grid"><button class="btn btn-outline-secondary">Bootstrap</button></div>
+                    <div class="d-grid"><button class="btn btn-outline-secondary">Reyna</button></div>
                   </div>
                   <div class="col-6">
-                    <div class="d-grid"><button class="btn btn-outline-secondary">MUI</button></div>
+                    <div class="d-grid"><button class="btn btn-outline-secondary">Omen</button></div>
                   </div>
                 </div>
               </div>
@@ -1289,7 +1289,7 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between mb-3">
-              <h5 class="mb-0">Overview Product</h5>
+              <h5 class="mb-0">Overview User: <%= jogadoresData[40].username %>: </h5>
               <div class="dropdown">
                 <a class="avtar avtar-s btn-link-secondary dropdown-toggle arrow-none" href="#"
                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1309,7 +1309,7 @@
             <div class="row g-3 text-center">
               <div class="col-6 col-lg-4 col-xxl-4">
                 <div class="overview-product-legends">
-                  <p class="text-dark mb-1"><span>Apps</span></p>
+                  <p class="text-dark mb-1"><span><%= jogadoresData[60].wins %></span></p>
                   <h6 class="mb-0">10+</h6>
                 </div>
               </div>
