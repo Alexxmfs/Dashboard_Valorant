@@ -68,7 +68,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("loginForm").addEventListener("submit", function(e) {
-            e.preventDefault(); // Impede o envio padrão do formulário
+            e.preventDefault(); 
 
             const email = document.getElementById("email").value;
             const senha = document.getElementById("senha").value;
@@ -82,9 +82,9 @@
             })
             .then(response => {
                 if (response.ok) {
-                    return response.json(); // Se a resposta for bem-sucedida, retorna os dados JSON
+                    return response.json(); 
                 } else {
-                    throw new Error('Erro ao fazer login'); // Se a resposta não for bem-sucedida, lança um erro
+                    throw new Error('Erro ao fazer login'); 
                 }
             })
             .then(data => {
