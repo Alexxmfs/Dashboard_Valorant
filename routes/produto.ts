@@ -60,24 +60,24 @@ class LivroRoute {
             const jogadoresData = responseJogadores.data;
     
             // Obtenha a média de preço
-            const responsePorcenVitoria = await axios.get('http://localhost:8080/jogador/porcen-vitoria');
-            const porcenVitoria = responsePorcenVitoria.data;
+            // const responsePorcenVitoria = await axios.get('http://localhost:8080/jogador/porcen-vitoria');
+            // const porcenVitoria = responsePorcenVitoria.data;
 
-            const responsePorcenVitAgente = await axios.get('http://localhost:8080/jogador/porcenVitAgent');
-            const porcenVitAgent = responsePorcenVitAgente.data;
+            // const responsePorcenVitAgente = await axios.get('http://localhost:8080/jogador/porcenVitAgent');
+            // const porcenVitAgent = responsePorcenVitAgente.data;
     
             const responseTotalJogadores = await axios.get('http://localhost:8080/jogador/total-jogadores');
             const totalJogadores = responseTotalJogadores.data;
 
-            const responseHeadshotAcima30 = await axios.get('http://localhost:8080/jogador/jogadorHeadshotAcima30');
-            const headshotAcima30 = responseHeadshotAcima30.data;
+            // const responseHeadshotAcima30 = await axios.get('http://localhost:8080/jogador/jogadorHeadshotAcima30');
+            // const headshotAcima30 = responseHeadshotAcima30.data;
 
             res.render("Dashboard/index", {
                 jogadoresData: jogadoresData,
-                porcenVitoria: porcenVitoria,
-                porcenVitAgent: porcenVitAgent,
+                // porcenVitoria: porcenVitoria,
+                // porcenVitAgent: porcenVitAgent,
                 totalJogadores: totalJogadores,
-                headshotAcima30: headshotAcima30
+                // headshotAcima30: headshotAcima30
             });
         } catch (error) {
             console.error('Erro ao obter produtos:', error);
