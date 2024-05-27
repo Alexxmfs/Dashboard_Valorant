@@ -208,7 +208,7 @@ function floatchart() {
         height: 320,
         type: 'donut'
       },
-      series: [2798, 737, 2559, 6560],
+      series: [2798, 1087, 9962, 6560],
       colors: ['#4680FF', '#E58A00', '#2CA87F', '#dc2626'],
       labels: ['Partidas', 'Partidas Ganhas Jett', 'Total de Jogadores', 'Headshot'],
       legend: {

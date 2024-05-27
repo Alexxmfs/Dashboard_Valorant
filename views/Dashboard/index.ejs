@@ -964,7 +964,7 @@
                 <div class="col-5">
                   <h5 class="mb-1"><%= jogadoresData[2].matches %> <i class="fa-solid fa-trophy" style="color: #4680FF;"></i></h5>
                   <p class="text-primary mb-0"><i class="ti ti-arrow-up-right"></i>
-                    <%= jogadoresData[16].win %>%
+                    <%= jogadoresData[2].win %>%
                   </p>
                 </div>
               </div>
@@ -992,7 +992,7 @@
                 </div>
               </div>
               <div class="flex-grow-1 ms-3">
-                <h6 class="mb-0">Taxa de Vitoria com <%= jogadoresData[0].top_win_agent1 %></h6>
+                <h6 class="mb-0">Taxa de Vitoria com <%= jogadoresData[0].topAgent1 %></h6>
               </div>
             </div>
             <div class="bg-body p-3 mt-3 rounded">
@@ -1002,10 +1002,10 @@
                 </div>
                 <div class="col-5">
                   <!-- pegando do vetor 2 -->
-                  <h5 class="mb-1"><%= jogadoresData[5].top_win_agent1%> <i class="fa-solid fa-trophy" style="color: #e58a00;"></i>
+                  <h5 class="mb-1"><%= jogadoresData[0].topMatchesAgent1 %> <i class="fa-solid fa-trophy" style="color: #e58a00;"></i>
                   </h5>
                   <p class="text-warning mb-0"><i class="ti ti-arrow-up-right"></i>
-                    <%=  jogadoresData[12].top_win_agent1 %>
+                    <%=  jogadoresData[12].topWinAgent1 %>%
                   </p>
                 </div>
               </div>
@@ -1092,8 +1092,8 @@
                   <div id="download-graph"></div>
                 </div>
                 <div class="col-5">
-                  <h5 class="mb-1"><%= headshotAcima30[1].kills %> <i class="fa-solid fa-skull" style="color: #dc2626;"></i></h5>
-                  <p class="text-danger mb-0"><i class="ti ti-arrow-up-right"></i> <%= headshotAcima30[1].headshot %></p>
+                  <h5 class="mb-1"><%= jogadoresData[0].kills %> <i class="fa-solid fa-skull" style="color: #dc2626;"></i></h5>
+                  <p class="text-danger mb-0"><i class="ti ti-arrow-up-right"></i> <%= jogadoresData[0].headshot %>%</p>
                 </div>
               </div>
             </div>
@@ -1422,7 +1422,7 @@
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
                       <div class="avtar avtar-s border" data-bs-toggle="tooltip" data-bs-title="143 Posts">
-                        <img src="../../public/images/user/gekko.png" class="jogadores-personagens" /> </div>
+                        <img src="../../public/images/user/Sage.png" class="jogadores-personagens" /> </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
@@ -1442,18 +1442,18 @@
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
                       <div class="avtar avtar-s border bg-light-warning" data-bs-toggle="tooltip"
-                        data-bs-title="143 Posts"><img src="../../public/images/user/Omen.png" class="jogadores-personagens" />
+                        data-bs-title="143 Posts"><img src="../../public/images/user/astra.png" class="jogadores-personagens" />
                       </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0"><%= jogadoresData[5].username %></h6>
+                          <h6 class="mb-0"><%= jogadoresData[6].username %></h6>
                           <p class="text-muted mb-0"><small>#<%= jogadoresData[5].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1"><%= jogadoresData[5].wins %><small>Wins</small></h6>
-                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> <%= jogadoresData[5].win %></p>
+                          <h6 class="mb-1"><%= jogadoresData[6].wins %><small>Wins</small></h6>
+                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> <%= jogadoresData[6].win %></p>
                         </div>
                       </div>
                     </div>
@@ -1462,17 +1462,17 @@
                 <li class="list-group-item">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <div class="avtar avtar-s border"><img src="../../public/images/user/Viper.png" class="jogadores-personagens" /></div>
+                      <div class="avtar avtar-s border"><img src="../../public/images/user/Chamber.png" class="jogadores-personagens" /></div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0"><%= jogadoresData[5].username %></h6>
-                          <p class="text-muted mb-0"><small>#<%= jogadoresData[5].tag %></small></p>
+                          <h6 class="mb-0"><%= jogadoresData[7].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[7].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1"><%= jogadoresData[5].wins %> <small>Wins</small></h6>
-                          <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[5].win %></p>
+                          <h6 class="mb-1"><%= jogadoresData[7].wins %> <small>Wins</small></h6>
+                          <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[7].win %></p>
                         </div>
                       </div>
                     </div>
@@ -1482,17 +1482,17 @@
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
                       <div class="avtar avtar-s border" data-bs-toggle="tooltip" data-bs-title="10,000 Tracks">
-                        <span><img src="../../public/images/user/raze.png" class="jogadores-personagens" /></span></div>
+                        <span><img src="../../public/images/user/breach.png" class="jogadores-personagens" /></span></div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0"><%= jogadoresData[5].username %></h6>
-                          <p class="text-muted mb-0"><small>#<%= jogadoresData[5].tag %></small></p>
+                          <h6 class="mb-0"><%= jogadoresData[8].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[8].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1"><%= jogadoresData[5].wins %><small>Wins</small></h6>
-                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> <%= jogadoresData[5].win %></p>
+                          <h6 class="mb-1"><%= jogadoresData[8].wins %><small>Wins</small></h6>
+                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> <%= jogadoresData[8].win %></p>
                         </div>
                       </div>
                     </div>
@@ -1502,18 +1502,18 @@
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
                       <div class="avtar avtar-s border bg-light-primary" data-bs-toggle="tooltip"
-                        data-bs-title="143 Posts"><img src="../../public/images/user/jett.png" class="jogadores-personagens" />
+                        data-bs-title="143 Posts"><img src="../../public/images/user/cypher.png" class="jogadores-personagens" />
                       </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0"><%= jogadoresData[5].username %></h6>
+                          <h6 class="mb-0"><%= jogadoresData[9].username %></h6>
                           <p class="text-muted mb-0"><small>#<%= jogadoresData[5].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1"><%= jogadoresData[5].wins %> <small>Wins</small></h6>
-                          <p class="text-warning mb-0"><i class="ti ti-arrows-left-right"></i> <%= jogadoresData[5].win %></p>
+                          <h6 class="mb-1"><%= jogadoresData[9].wins %> <small>Wins</small></h6>
+                          <p class="text-warning mb-0"><i class="ti ti-arrows-left-right"></i> <%= jogadoresData[9].win %></p>
                         </div>
                       </div>
                     </div>
@@ -1527,18 +1527,19 @@
                 <li class="list-group-item">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <div class="avtar avtar-s border" data-bs-toggle="tooltip" data-bs-title="10,000 Tracks">
-                        <span>SM</span></div>
+                      <div class="avtar avtar-s border bg-light-primary" data-bs-toggle="tooltip"
+                        data-bs-title="143 Posts"><img src="../../public/images/user/brimstone.png" class="jogadores-personagens" />
+                      </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0">Spotify Music</h6>
-                          <p class="text-muted mb-0"><small>#ABLE-PRO-T10232</small></p>
+                          <h6 class="mb-0"><%= jogadoresData[10].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[5].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1">- 10,000</h6>
-                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> 30.6%</p>
+                          <h6 class="mb-1"><%= jogadoresData[10].losses %> <small>Losses</small></h6>
+                          <p class="text-warning mb-0"><i class="ti ti-arrows-left-right"></i> <%= jogadoresData[10].win %>%</p>
                         </div>
                       </div>
                     </div>
@@ -1548,18 +1549,18 @@
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
                       <div class="avtar avtar-s border bg-light-primary" data-bs-toggle="tooltip"
-                        data-bs-title="143 Posts"><span>MD</span>
+                        data-bs-title="143 Posts"><img src="../../public/images/user/clove.png" class="jogadores-personagens" />
                       </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0">Medium</h6>
-                          <p class="text-muted mb-0"><small>06:30 pm</small></p>
+                          <h6 class="mb-0"><%= jogadoresData[11].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[11].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1">-26</h6>
-                          <p class="text-warning mb-0"><i class="ti ti-arrows-left-right"></i> 5%</p>
+                          <h6 class="mb-1"><%= jogadoresData[11].losses %> <small>Losses</small></h6>
+                          <p class="text-success mb-0"><i class="ti ti-arrows-left-right"></i> <%= jogadoresData[11].win %>%</p>
                         </div>
                       </div>
                     </div>
@@ -1568,18 +1569,19 @@
                 <li class="list-group-item">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <div class="avtar avtar-s border" data-bs-toggle="tooltip" data-bs-title="143 Posts">
-                        <span>U</span> </div>
+                      <div class="avtar avtar-s border bg-light-primary" data-bs-toggle="tooltip"
+                        data-bs-title="143 Posts"><img src="../../public/images/user/deadlock.png" class="jogadores-personagens" />
+                      </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0">Uber</h6>
-                          <p class="text-muted mb-0"><small>08:40 pm</small></p>
+                          <h6 class="mb-0"><%= jogadoresData[12].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[12].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1">+210,000</h6>
-                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> 10.6%</p>
+                          <h6 class="mb-1"><%= jogadoresData[12].losses %> <small>Losses</small></h6>
+                          <p class="text-warning mb-0"><i class="ti ti-arrows-left-right"></i> <%= jogadoresData[12].win %>%</p>
                         </div>
                       </div>
                     </div>
@@ -1588,17 +1590,19 @@
                 <li class="list-group-item">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <div class="avtar avtar-s border"> AI </div>
+                      <div class="avtar avtar-s border bg-light-primary" data-bs-toggle="tooltip"
+                        data-bs-title="143 Posts"><img src="../../public/images/user/fade.png" class="jogadores-personagens" />
+                      </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0">Apple Inc.</h6>
-                          <p class="text-muted mb-0"><small>#ABLE-PRO-T00232</small></p>
+                          <h6 class="mb-0"><%= jogadoresData[13].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[13].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1">$210,000</h6>
-                          <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> 10.6%</p>
+                          <h6 class="mb-1"><%= jogadoresData[13].losses %> <small>Losses</small></h6>
+                          <p class="text-danger mb-0"><i class="ti ti-arrows-left-right"></i> <%= jogadoresData[13].win %>%</p>
                         </div>
                       </div>
                     </div>
@@ -1607,19 +1611,19 @@
                 <li class="list-group-item">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <div class="avtar avtar-s border bg-light-warning" data-bs-toggle="tooltip"
-                        data-bs-title="143 Posts"><span>OC</span>
+                      <div class="avtar avtar-s border bg-light-primary" data-bs-toggle="tooltip"
+                        data-bs-title="143 Posts"><img src="../../public/images/user/kayo.png" class="jogadores-personagens" />
                       </div>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <div class="row g-1">
                         <div class="col-6">
-                          <h6 class="mb-0">Ola Cabs</h6>
-                          <p class="text-muted mb-0"><small>07:40 pm</small></p>
+                          <h6 class="mb-0"><%= jogadoresData[14].username %></h6>
+                          <p class="text-muted mb-0"><small>#<%= jogadoresData[14].tag %></small></p>
                         </div>
                         <div class="col-6 text-end">
-                          <h6 class="mb-1">+210,000</h6>
-                          <p class="text-success mb-0"><i class="ti ti-arrow-up-right"></i> 10.6%</p>
+                          <h6 class="mb-1"><%= jogadoresData[14].losses %> <small>Losses</small></h6>
+                          <p class="text-success mb-0"><i class="ti ti-arrows-left-right"></i> <%= jogadoresData[14].win %>%</p>
                         </div>
                       </div>
                     </div>
@@ -1674,10 +1678,10 @@
                       </span>
                     </div>
                     <div class="flex-grow-1 ms-2">
-                      <p class="mb-0">Taxa de Vitoria com <%= jogadoresData[0].top_win_agent1 %></p>
+                      <p class="mb-0">Taxa de Vitoria com <%= jogadoresData[0].topAgent1 %> %></p>
                     </div>
                   </div>
-                  <h6 class="mb-0"><%= jogadoresData[12].top_win_agent1 %> Partidas <small class="text-muted"><i class="ti ti-chevrons-up"></i> <%=  jogadoresData[2].top_win_agent1 %></small>
+                  <h6 class="mb-0"><%= jogadoresData[0].topMatchesAgent1 %> Partidas <small class="text-muted"><i class="ti ti-chevrons-up"></i> <%=  jogadoresData[0].topWinAgent1 %></small>
                   </h6>
                 </div>
               </div>
@@ -1709,7 +1713,7 @@
                       <p class="mb-0">Headshot > 30%</p>
                     </div>
                   </div>
-                  <h6 class="mb-0"><%= headshotAcima30[1].kills %>0 <small class="text-muted"><i class="ti ti-chevrons-up"></i> <%= headshotAcima30[1].headshot %></small>
+                  <h6 class="mb-0"><%= jogadoresData[1].kills %>0 <small class="text-muted"><i class="ti ti-chevrons-up"></i> <%= jogadoresData[1].headshot %></small>
                   </h6>
                 </div>
               </div>
