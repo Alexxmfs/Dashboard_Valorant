@@ -1330,7 +1330,9 @@
                         alt="User image">
                     </div>
                     <h5 class="mb-0"><%= jogador.username %></h5>
+                    <div class="circulo-higlight">
                     <p class="text-muted text-sm">#<%= jogador.tag %></p>
+                    </div>
                     <hr class="my-3 border border-secondary-subtle">
                     <div class="row g-3">
                       <div class="col-4">
@@ -1342,7 +1344,7 @@
                         <small class="text-muted">Vitórias</small>
                       </div>
                       <div class="col-4">
-                        <h5 class="mb-0"><%= jogador.loses %></h5>
+                        <h5 class="mb-0"><%= jogador.losses %></h5>
                         <small class="text-muted">Derrotas</small>
                       </div>
                     </div>
@@ -1451,94 +1453,748 @@
                   </div> -->
                   <div class="card">
                     <div class="card-header">
-                      <h5>Top Mapas</h5>
+                      <h3>Top Mapas</h3>
                     </div>
                     <div class="card-body">
                       <div class="row align-items-center mb-3">
-                        <div class="col-sm-6 mb-2 mb-sm-0">
-                          <p class="mb-0"><%= jogador.top_weapon_2 %></p>
+                      <div class="mapa-container">
+                        <div class="mapa">
+                        <img id="mapa-img" src="../../public/images/mapas/map-dark.png" alt="Mapa" width="30" height="30">
+                      </div>
+                        <h4>Mapas</h4>
+                      <div class="direita-mapa espaco-mapa">
+                        <h4>Win%</h4>
+                      </div>
+                      </div>
+                        <div class="tirar-padding d-flex align-items-center col-sm-6 mb-2 mb-sm-0">
+                          <% if (jogador.topMap1 == "Ascent") { %>
+                          <div class="map-container">
+                            <img src="../../public/images/mapas/ascent.webp" alt="Ascent" width="300" height="200">   
+                            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap1 %></p>  
+                          </div>                 
+                          <% } else if (jogador.topMap1 === "Bind") { %>
+                          <div class="map-container">
+                            <img src="../../public/images/mapas/bind.webp" alt="Bind" width="300" height="200">
+                            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap1 %></p> 
+                          </div>     
+                          <% } else if (jogador.topMap1 === "Breeze") { %>
+                          <div class="map-container">
+                            <img src="../../public/images/mapas/breeze.webp" alt="Breeze" width="300" height="200">
+                            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap1 %></p> 
+                          </div> 
+                          <% } else if (jogador.topMap1 === "Haven") { %>
+                          <div class="map-container">
+                            <img src="../../public/images/mapas/haven.webp" alt="Haven" width="300" height="200">
+                            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap1 %></p> 
+                          </div> 
+                          <% } else if (jogador.topMap1 === "Icebox") { %>
+                          <div class="map-container">
+                            <img src="../../public/images/mapas/icebox.webp" alt="Icebox" width="300" height="200">
+                            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap1 %></p> 
+                          </div> 
+                          <% } else if (jogador.topMap1 === "Lotus") { %>
+                          <div class="map-container">
+                            <img src="../../public/images/mapas/lotus.webp" alt="Lotus" width="300" height="200">
+                            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap1 %></p> 
+                          </div>
+                          <% } else if (jogador.topMap1 === "Pearl") { %>
+                          <div class="map-container">
+                            <img src="../../public/images/mapas/pearl.webp" alt="Pearl" width="300" height="200">
+                            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap1 %></p> 
+                          </div>
+                          <% } else if (jogador.topMap1 === "Split") { %>
+                          <div class="map-container">
+                            <img src="../../public/images/mapas/split.webp" alt="Split" width="300" height="200">
+                            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap1 %></p> 
+                          </div>
+                          <% } else if (jogador.topMap1 === "Sunset") { %>
+                          <div class="map-container">
+                            <img src="../../public/images/mapas/sunset.webp" alt="Sunset" width="300" height="200">
+                            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap1 %></p> 
+                          </div>  
+                          <% } else { %>
+                          <div class="map-container">
+                            <img src="../../public/images/mapas/fracture.webp" alt="Fracture" width="300" height="200">
+                            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap1 %></p> 
+                          </div>
+                          <% } %>
+                          <!-- <p class="mb-0 espaco-img-agente"><%= jogador.topMap1 %></p> -->
                         </div>
                         <div class="col-sm-6">
                           <div class="d-flex align-items-center">
                             <div class="flex-grow-1 me-3">
                               <div class="progress progress-primary " style="height: 6px;">
-                                <div class="progress-bar" style="width: <%= jogador.top_porcentagem_map_win_1 %>;"></div>
+                                <div class="progress-bar" style="width: <%= jogador.topMapWinrate1 %>%;"></div>
                               </div>
                             </div>
-                            <div class="flex-shrink-0">
-                              <p class="mb-0 text-muted"><%= jogador.top_porcentagem_map_win_1 %></p>
+                            <div class="flex-shrink-0 espaco-mapa">
+                              <p class="mb-0 mapa-negrito mapa-primeiro"><%= jogador.topMapWinrate1 %>%</p>
+                            
                             </div>
+                          </div>
+                          <div class="direita-mapa">
+                            <p class="mb-0 text-muted"><%= jogador.topMapWins1 %>W - <%= jogador.topMapLosses1 %>L</p>
                           </div>
                         </div>
                       </div>
-                      <div class="row align-items-center mb-3">
-                        <div class="col-sm-6 mb-2 mb-sm-0">
-                          <p class="mb-0"><%= jogador.top_maps_1 %></p>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="d-flex align-items-center">
-                            <div class="flex-grow-1 me-3">
-                              <div class="progress progress-primary " style="height: 6px;">
-                                <div class="progress-bar" style="width: <%= jogador.top_porcentagem_map_win_1 %>;"></div>
-                              </div>
+
+                      
+                        <div class="row align-items-center mb-3">
+                          <div class="tirar-padding d-flex align-items-center col-sm-6 mb-2 mb-sm-0">
+                            <% if (jogador.topMap2 == "Ascent") { %>
+                            <div class="map-container">
+                              <img src="../../public/images/mapas/ascent.webp" alt="Ascent" width="300" height="200">   
+                              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap2 %></p>  
+                            </div>                 
+                            <% } else if (jogador.topMap2 === "Bind") { %>
+                            <div class="map-container">
+                              <img src="../../public/images/mapas/bind.webp" alt="Bind" width="300" height="200">
+                              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap2 %></p> 
+                            </div>     
+                            <% } else if (jogador.topMap2 === "Breeze") { %>
+                            <div class="map-container">
+                              <img src="../../public/images/mapas/breeze.webp" alt="Breeze" width="300" height="200">
+                              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap2 %></p> 
+                            </div> 
+                            <% } else if (jogador.topMap2 === "Haven") { %>
+                            <div class="map-container">
+                              <img src="../../public/images/mapas/haven.webp" alt="Haven" width="300" height="200">
+                              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap2 %></p> 
+                            </div> 
+                            <% } else if (jogador.topMap2 === "Icebox") { %>
+                            <div class="map-container">
+                              <img src="../../public/images/mapas/icebox.webp" alt="Icebox" width="300" height="200">
+                              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap2 %></p> 
+                            </div> 
+                            <% } else if (jogador.topMap2 === "Lotus") { %>
+                            <div class="map-container">
+                              <img src="../../public/images/mapas/lotus.webp" alt="Lotus" width="300" height="200">
+                              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap2 %></p> 
                             </div>
-                            <div class="flex-shrink-0">
-                              <p class="mb-0 text-muted"><%= jogador.top_porcentagem_map_win_1 %></p>
+                            <% } else if (jogador.topMap2 === "Pearl") { %>
+                            <div class="map-container">
+                              <img src="../../public/images/mapas/pearl.webp" alt="Pearl" width="300" height="200">
+                              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap2 %></p> 
+                            </div>
+                            <% } else if (jogador.topMap2 === "Split") { %>
+                            <div class="map-container">
+                              <img src="../../public/images/mapas/split.webp" alt="Split" width="300" height="200">
+                              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap2 %></p> 
+                            </div>
+                            <% } else if (jogador.topMap2 === "Sunset") { %>
+                            <div class="map-container">
+                              <img src="../../public/images/mapas/sunset.webp" alt="Sunset" width="300" height="200">
+                              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap2 %></p> 
+                            </div>  
+                            <% } else { %>
+                            <div class="map-container">
+                              <img src="../../public/images/mapas/fracture.webp" alt="Fracture" width="300" height="200">
+                              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap2 %></p> 
+                            </div>
+                            <% } %>
+                        <!-- <p class="mb-0 espaco-img-agente"><%= jogador.topMap2 %></p> -->
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="d-flex align-items-center">
+                          <div class="flex-grow-1 me-3">
+                            <div class="progress progress-primary " style="height: 6px;">
+                              <div class="progress-bar" style="width: <%= jogador.topMapWinrate2 %>%;"></div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      <div class="row align-items-center mb-3">
-                        <div class="col-sm-6 mb-2 mb-sm-0">
-                          <p class="mb-0"><%= jogador.top_maps_1 %></p>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="d-flex align-items-center">
-                            <div class="flex-grow-1 me-3">
-                              <div class="progress progress-primary " style="height: 6px;">
-                                <div class="progress-bar" style="width: <%= jogador.top_porcentagem_map_win_1 %>;"></div>
-                              </div>
-                            </div>
-                            <div class="flex-shrink-0">
-                              <p class="mb-0 text-muted"><%= jogador.top_porcentagem_map_win_1 %></p>
-                            </div>
+                          <div class="flex-shrink-0 espaco-mapa">
+                            <p class="mb-0 text-muted mapa-negrito"><%= jogador.topMapWinrate2 %>%</p>
+                          
                           </div>
                         </div>
-                      </div>
-                      <div class="row align-items-center mb-3">
-                        <div class="col-sm-6 mb-2 mb-sm-0">
-                          <p class="mb-0"><%= jogador.top_maps_1 %></p>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="d-flex align-items-center">
-                            <div class="flex-grow-1 me-3">
-                              <div class="progress progress-primary " style="height: 6px;">
-                                <div class="progress-bar" style="width: <%= jogador.top_porcentagem_map_win_1 %>;"></div>
-                              </div>
-                            </div>
-                            <div class="flex-shrink-0">
-                              <p class="mb-0 text-muted"><%= jogador.top_porcentagem_map_win_1 %></p>
-                            </div>
-                          </div>
+                        <div class="direita-mapa">
+                          <p class="mb-0 text-muted"><%= jogador.topMapWins2 %>W - <%= jogador.topMapLosses2 %>L</p>
                         </div>
                       </div>
-                      <div class="row align-items-center mb-3">
-                        <div class="col-sm-6 mb-2 mb-sm-0">
-                          <p class="mb-0"><%= jogador.top_maps_1 %></p>
+                    </div>
+
+                    <div class="row align-items-center mb-3">
+                      <div class="tirar-padding d-flex align-items-center col-sm-6 mb-2 mb-sm-0">
+                        <% if (jogador.topMap3 == "Ascent") { %>
+                        <div class="map-container">
+                          <img src="../../public/images/mapas/ascent.webp" alt="Ascent" width="300" height="200">   
+                          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap3 %></p>  
+                        </div>                 
+                        <% } else if (jogador.topMap3 === "Bind") { %>
+                        <div class="map-container">
+                          <img src="../../public/images/mapas/bind.webp" alt="Bind" width="300" height="200">
+                          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap3 %></p> 
+                        </div>     
+                        <% } else if (jogador.topMap3 === "Breeze") { %>
+                        <div class="map-container">
+                          <img src="../../public/images/mapas/breeze.webp" alt="Breeze" width="300" height="200">
+                          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap3 %></p> 
+                        </div> 
+                        <% } else if (jogador.topMap3 === "Haven") { %>
+                        <div class="map-container">
+                          <img src="../../public/images/mapas/haven.webp" alt="Haven" width="300" height="200">
+                          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap3 %></p> 
+                        </div> 
+                        <% } else if (jogador.topMap3 === "Icebox") { %>
+                        <div class="map-container">
+                          <img src="../../public/images/mapas/icebox.webp" alt="Icebox" width="300" height="200">
+                          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap3 %></p> 
+                        </div> 
+                        <% } else if (jogador.topMap3 === "Lotus") { %>
+                        <div class="map-container">
+                          <img src="../../public/images/mapas/lotus.webp" alt="Lotus" width="300" height="200">
+                          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap3 %></p> 
                         </div>
-                        <div class="col-sm-6">
-                          <div class="d-flex align-items-center">
-                            <div class="flex-grow-1 me-3">
-                              <div class="progress progress-primary " style="height: 6px;">
-                                <div class="progress-bar" style="width: <%= jogador.top_porcentagem_map_win_1 %>;"></div>
-                              </div>
-                            </div>
-                            <div class="flex-shrink-0">
-                              <p class="mb-0 text-muted"><%= jogador.top_porcentagem_map_win_1 %></p>
-                            </div>
-                          </div>
+                        <% } else if (jogador.topMap3 === "Pearl") { %>
+                        <div class="map-container">
+                          <img src="../../public/images/mapas/pearl.webp" alt="Pearl" width="300" height="200">
+                          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap3 %></p> 
+                        </div>
+                        <% } else if (jogador.topMap3 === "Split") { %>
+                        <div class="map-container">
+                          <img src="../../public/images/mapas/split.webp" alt="Split" width="300" height="200">
+                          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap3 %></p> 
+                        </div>
+                        <% } else if (jogador.topMap3 === "Sunset") { %>
+                        <div class="map-container">
+                          <img src="../../public/images/mapas/sunset.webp" alt="Sunset" width="300" height="200">
+                          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap3 %></p> 
+                        </div>  
+                        <% } else { %>
+                        <div class="map-container">
+                          <img src="../../public/images/mapas/fracture.webp" alt="Fracture" width="300" height="200">
+                          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap3 %></p> 
+                        </div>
+                        <% } %>
+                    <!-- <p class="mb-0 espaco-img-agente"><%= jogador.topMap3 %></p> -->
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-grow-1 me-3">
+                        <div class="progress progress-primary " style="height: 6px;">
+                          <div class="progress-bar" style="width: <%= jogador.topMapWinrate3 %>%;"></div>
                         </div>
                       </div>
+                      <div class="flex-shrink-0 espaco-mapa">
+                        <p class="mb-0 text-muted mapa-negrito"><%= jogador.topMapWinrate3 %>%</p>
+                      
+                      </div>
+                    </div>
+                    <div class="direita-mapa">
+                      <p class="mb-0 text-muted"><%= jogador.topMapWins3 %>W - <%= jogador.topMapLosses3 %>L</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row align-items-center mb-3">
+                  <div class="tirar-padding d-flex align-items-center col-sm-6 mb-2 mb-sm-0">
+                    <% if (jogador.topMap4 == "Ascent") { %>
+                    <div class="map-container">
+                      <img src="../../public/images/mapas/ascent.webp" alt="Ascent" width="300" height="200">   
+                      <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap4 %></p>  
+                    </div>                 
+                    <% } else if (jogador.topMap4 === "Bind") { %>
+                    <div class="map-container">
+                      <img src="../../public/images/mapas/bind.webp" alt="Bind" width="300" height="200">
+                      <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap4 %></p> 
+                    </div>     
+                    <% } else if (jogador.topMap4 === "Breeze") { %>
+                    <div class="map-container">
+                      <img src="../../public/images/mapas/breeze.webp" alt="Breeze" width="300" height="200">
+                      <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap4 %></p> 
+                    </div> 
+                    <% } else if (jogador.topMap4 === "Haven") { %>
+                    <div class="map-container">
+                      <img src="../../public/images/mapas/haven.webp" alt="Haven" width="300" height="200">
+                      <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap4 %></p> 
+                    </div> 
+                    <% } else if (jogador.topMap4 === "Icebox") { %>
+                    <div class="map-container">
+                      <img src="../../public/images/mapas/icebox.webp" alt="Icebox" width="300" height="200">
+                      <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap4 %></p> 
+                    </div> 
+                    <% } else if (jogador.topMap4 === "Lotus") { %>
+                    <div class="map-container">
+                      <img src="../../public/images/mapas/lotus.webp" alt="Lotus" width="300" height="200">
+                      <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap4 %></p> 
+                    </div>
+                    <% } else if (jogador.topMap4 === "Pearl") { %>
+                    <div class="map-container">
+                      <img src="../../public/images/mapas/pearl.webp" alt="Pearl" width="300" height="200">
+                      <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap4 %></p> 
+                    </div>
+                    <% } else if (jogador.topMap4 === "Split") { %>
+                    <div class="map-container">
+                      <img src="../../public/images/mapas/split.webp" alt="Split" width="300" height="200">
+                      <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap4 %></p> 
+                    </div>
+                    <% } else if (jogador.topMap4 === "Sunset") { %>
+                    <div class="map-container">
+                      <img src="../../public/images/mapas/sunset.webp" alt="Sunset" width="300" height="200">
+                      <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap4 %></p> 
+                    </div>  
+                    <% } else { %>
+                    <div class="map-container">
+                      <img src="../../public/images/mapas/fracture.webp" alt="Fracture" width="300" height="200">
+                      <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap4 %></p> 
+                    </div>
+                    <% } %>
+                <!-- <p class="mb-0 espaco-img-agente"><%= jogador.topMap4 %></p> -->
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <div class="flex-grow-1 me-3">
+                    <div class="progress progress-primary " style="height: 6px;">
+                      <div class="progress-bar" style="width: <%= jogador.topMapWinrate4 %>%;"></div>
+                    </div>
+                  </div>
+                  <div class="flex-shrink-0 espaco-mapa">
+                    <p class="mb-0 text-muted mapa-negrito"><%= jogador.topMapWinrate4 %>%</p>
+                  
+                  </div>
+                </div>
+                <div class="direita-mapa">
+                  <p class="mb-0 text-muted"><%= jogador.topMapWins4 %>W - <%= jogador.topMapLosses4 %>L</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row align-items-center mb-3">
+              <div class="tirar-padding d-flex align-items-center col-sm-6 mb-2 mb-sm-0">
+                <% if (jogador.topMap5 == "Ascent") { %>
+                <div class="map-container">
+                  <img src="../../public/images/mapas/ascent.webp" alt="Ascent" width="300" height="200">   
+                  <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap5 %></p>  
+                </div>                 
+                <% } else if (jogador.topMap5 === "Bind") { %>
+                <div class="map-container">
+                  <img src="../../public/images/mapas/bind.webp" alt="Bind" width="300" height="200">
+                  <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap5 %></p> 
+                </div>     
+                <% } else if (jogador.topMap5 === "Breeze") { %>
+                <div class="map-container">
+                  <img src="../../public/images/mapas/breeze.webp" alt="Breeze" width="300" height="200">
+                  <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap5 %></p> 
+                </div> 
+                <% } else if (jogador.topMap5 === "Haven") { %>
+                <div class="map-container">
+                  <img src="../../public/images/mapas/haven.webp" alt="Haven" width="300" height="200">
+                  <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap5 %></p> 
+                </div> 
+                <% } else if (jogador.topMap5 === "Icebox") { %>
+                <div class="map-container">
+                  <img src="../../public/images/mapas/icebox.webp" alt="Icebox" width="300" height="200">
+                  <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap5 %></p> 
+                </div> 
+                <% } else if (jogador.topMap5 === "Lotus") { %>
+                <div class="map-container">
+                  <img src="../../public/images/mapas/lotus.webp" alt="Lotus" width="300" height="200">
+                  <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap5 %></p> 
+                </div>
+                <% } else if (jogador.topMap5 === "Pearl") { %>
+                <div class="map-container">
+                  <img src="../../public/images/mapas/pearl.webp" alt="Pearl" width="300" height="200">
+                  <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap5 %></p> 
+                </div>
+                <% } else if (jogador.topMap5 === "Split") { %>
+                <div class="map-container">
+                  <img src="../../public/images/mapas/split.webp" alt="Split" width="300" height="200">
+                  <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap5 %></p> 
+                </div>
+                <% } else if (jogador.topMap5 === "Sunset") { %>
+                <div class="map-container">
+                  <img src="../../public/images/mapas/sunset.webp" alt="Sunset" width="300" height="200">
+                  <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap5 %></p> 
+                </div>  
+                <% } else { %>
+                <div class="map-container">
+                  <img src="../../public/images/mapas/fracture.webp" alt="Fracture" width="300" height="200">
+                  <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap5 %></p> 
+                </div>
+                <% } %>
+            <!-- <p class="mb-0 espaco-img-agente"><%= jogador.topMap5 %></p> -->
+          </div>
+          <div class="col-sm-6">
+            <div class="d-flex align-items-center">
+              <div class="flex-grow-1 me-3">
+                <div class="progress progress-primary " style="height: 6px;">
+                  <div class="progress-bar" style="width: <%= jogador.topMapWinrate5 %>%;"></div>
+                </div>
+              </div>
+              <div class="flex-shrink-0 espaco-mapa">
+                <p class="mb-0 text-muted mapa-negrito"><%= jogador.topMapWinrate5 %>%</p>
+              
+              </div>
+            </div>
+            <div class="direita-mapa">
+              <p class="mb-0 text-muted"><%= jogador.topMapWins5 %>W - <%= jogador.topMapLosses5 %>L</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-3">
+          <div class="tirar-padding d-flex align-items-center col-sm-6 mb-2 mb-sm-0">
+            <% if (jogador.topMap6 == "Ascent") { %>
+            <div class="map-container">
+              <img src="../../public/images/mapas/ascent.webp" alt="Ascent" width="300" height="200">   
+              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap6 %></p>  
+            </div>                 
+            <% } else if (jogador.topMap6 === "Bind") { %>
+            <div class="map-container">
+              <img src="../../public/images/mapas/bind.webp" alt="Bind" width="300" height="200">
+              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap6 %></p> 
+            </div>     
+            <% } else if (jogador.topMap6 === "Breeze") { %>
+            <div class="map-container">
+              <img src="../../public/images/mapas/breeze.webp" alt="Breeze" width="300" height="200">
+              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap6 %></p> 
+            </div> 
+            <% } else if (jogador.topMap6 === "Haven") { %>
+            <div class="map-container">
+              <img src="../../public/images/mapas/haven.webp" alt="Haven" width="300" height="200">
+              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap6 %></p> 
+            </div> 
+            <% } else if (jogador.topMap6 === "Icebox") { %>
+            <div class="map-container">
+              <img src="../../public/images/mapas/icebox.webp" alt="Icebox" width="300" height="200">
+              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap6 %></p> 
+            </div> 
+            <% } else if (jogador.topMap6 === "Lotus") { %>
+            <div class="map-container">
+              <img src="../../public/images/mapas/lotus.webp" alt="Lotus" width="300" height="200">
+              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap6 %></p> 
+            </div>
+            <% } else if (jogador.topMap6 === "Pearl") { %>
+            <div class="map-container">
+              <img src="../../public/images/mapas/pearl.webp" alt="Pearl" width="300" height="200">
+              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap6 %></p> 
+            </div>
+            <% } else if (jogador.topMap6 === "Split") { %>
+            <div class="map-container">
+              <img src="../../public/images/mapas/split.webp" alt="Split" width="300" height="200">
+              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap6 %></p> 
+            </div>
+            <% } else if (jogador.topMap6 === "Sunset") { %>
+            <div class="map-container">
+              <img src="../../public/images/mapas/sunset.webp" alt="Sunset" width="300" height="200">
+              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap6 %></p> 
+            </div>  
+            <% } else { %>
+            <div class="map-container">
+              <img src="../../public/images/mapas/fracture.webp" alt="Fracture" width="300" height="200">
+              <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap6 %></p> 
+            </div>
+            <% } %>
+        <!-- <p class="mb-0 espaco-img-agente"><%= jogador.topMap6 %></p> -->
+      </div>
+      <div class="col-sm-6">
+        <div class="d-flex align-items-center">
+          <div class="flex-grow-1 me-3">
+            <div class="progress progress-primary " style="height: 6px;">
+              <div class="progress-bar" style="width: <%= jogador.topMapWinrate6 %>%;"></div>
+            </div>
+          </div>
+          <div class="flex-shrink-0 espaco-mapa">
+            <p class="mb-0 text-muted mapa-negrito"><%= jogador.topMapWinrate6 %>%</p>
+          
+          </div>
+        </div>
+        <div class="direita-mapa">
+          <p class="mb-0 text-muted"><%= jogador.topMapWins6 %>W - <%= jogador.topMapLosses6 %>L</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="row align-items-center mb-3">
+        <div class="tirar-padding d-flex align-items-center col-sm-6 mb-2 mb-sm-0">
+          <% if (jogador.topMap7 == "Ascent") { %>
+          <div class="map-container">
+            <img src="../../public/images/mapas/ascent.webp" alt="Ascent" width="300" height="200">   
+            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap7 %></p>  
+          </div>                 
+          <% } else if (jogador.topMap7 === "Bind") { %>
+          <div class="map-container">
+            <img src="../../public/images/mapas/bind.webp" alt="Bind" width="300" height="200">
+            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap7 %></p> 
+          </div>     
+          <% } else if (jogador.topMap7 === "Breeze") { %>
+          <div class="map-container">
+            <img src="../../public/images/mapas/breeze.webp" alt="Breeze" width="300" height="200">
+            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap7 %></p> 
+          </div> 
+          <% } else if (jogador.topMap7 === "Haven") { %>
+          <div class="map-container">
+            <img src="../../public/images/mapas/haven.webp" alt="Haven" width="300" height="200">
+            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap7 %></p> 
+          </div> 
+          <% } else if (jogador.topMap7 === "Icebox") { %>
+          <div class="map-container">
+            <img src="../../public/images/mapas/icebox.webp" alt="Icebox" width="300" height="200">
+            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap7 %></p> 
+          </div> 
+          <% } else if (jogador.topMap7 === "Lotus") { %>
+          <div class="map-container">
+            <img src="../../public/images/mapas/lotus.webp" alt="Lotus" width="300" height="200">
+            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap7 %></p> 
+          </div>
+          <% } else if (jogador.topMap7 === "Pearl") { %>
+          <div class="map-container">
+            <img src="../../public/images/mapas/pearl.webp" alt="Pearl" width="300" height="200">
+            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap7 %></p> 
+          </div>
+          <% } else if (jogador.topMap7 === "Split") { %>
+          <div class="map-container">
+            <img src="../../public/images/mapas/split.webp" alt="Split" width="300" height="200">
+            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap7 %></p> 
+          </div>
+          <% } else if (jogador.topMap7 === "Sunset") { %>
+          <div class="map-container">
+            <img src="../../public/images/mapas/sunset.webp" alt="Sunset" width="300" height="200">
+            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap7 %></p> 
+          </div>  
+          <% } else { %>
+          <div class="map-container">
+            <img src="../../public/images/mapas/fracture.webp" alt="Fracture" width="300" height="200">
+            <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap7 %></p> 
+          </div>
+          <% } %>
+      <!-- <p class="mb-0 espaco-img-agente"><%= jogador.topMap7 %></p> -->
+    </div>
+    <div class="col-sm-6">
+      <div class="d-flex align-items-center">
+        <div class="flex-grow-1 me-3">
+          <div class="progress progress-primary " style="height: 6px;">
+            <div class="progress-bar" style="width: <%= jogador.topMapWinrate7 %>%;"></div>
+          </div>
+        </div>
+        <div class="flex-shrink-0 espaco-mapa">
+          <p class="mb-0 text-muted mapa-negrito"><%= jogador.topMapWinrate7 %>%</p>
+        
+        </div>
+      </div>
+      <div class="direita-mapa">
+        <p class="mb-0 text-muted"><%= jogador.topMapWins7 %>W - <%= jogador.topMapLosses7 %>L</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="row align-items-center mb-3">
+      <div class="tirar-padding d-flex align-items-center col-sm-6 mb-2 mb-sm-0">
+        <% if (jogador.topMap8 == "Ascent") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/ascent.webp" alt="Ascent" width="300" height="200">   
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap8 %></p>  
+        </div>                 
+        <% } else if (jogador.topMap8 === "Bind") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/bind.webp" alt="Bind" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap8 %></p> 
+        </div>     
+        <% } else if (jogador.topMap8 === "Breeze") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/breeze.webp" alt="Breeze" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap8 %></p> 
+        </div> 
+        <% } else if (jogador.topMap8 === "Haven") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/haven.webp" alt="Haven" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap8 %></p> 
+        </div> 
+        <% } else if (jogador.topMap8 === "Icebox") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/icebox.webp" alt="Icebox" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap8 %></p> 
+        </div> 
+        <% } else if (jogador.topMap8 === "Lotus") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/lotus.webp" alt="Lotus" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap8 %></p> 
+        </div>
+        <% } else if (jogador.topMap8 === "Pearl") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/pearl.webp" alt="Pearl" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap8 %></p> 
+        </div>
+        <% } else if (jogador.topMap8 === "Split") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/split.webp" alt="Split" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap8 %></p> 
+        </div>
+        <% } else if (jogador.topMap8 === "Sunset") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/sunset.webp" alt="Sunset" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap8 %></p> 
+        </div>  
+        <% } else { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/fracture.webp" alt="Fracture" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap8 %></p> 
+        </div>
+        <% } %>
+    <!-- <p class="mb-0 espaco-img-agente"><%= jogador.topMap8 %></p> -->
+    </div>
+    <div class="col-sm-6">
+    <div class="d-flex align-items-center">
+      <div class="flex-grow-1 me-3">
+        <div class="progress progress-primary " style="height: 6px;">
+          <div class="progress-bar" style="width: <%= jogador.topMapWinrate8 %>%;"></div>
+        </div>
+      </div>
+      <div class="flex-shrink-0 espaco-mapa">
+        <p class="mb-0 text-muted mapa-negrito"><%= jogador.topMapWinrate8 %>%</p>
+      
+      </div>
+    </div>
+    <div class="direita-mapa">
+      <p class="mb-0 text-muted"><%= jogador.topMapWins8 %>W - <%= jogador.topMapLosses8 %>L</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="row align-items-center mb-3">
+      <div class="tirar-padding d-flex align-items-center col-sm-6 mb-2 mb-sm-0">
+        <% if (jogador.topMap9 == "Ascent") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/ascent.webp" alt="Ascent" width="300" height="200">   
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap9 %></p>  
+        </div>                 
+        <% } else if (jogador.topMap9 === "Bind") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/bind.webp" alt="Bind" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap9 %></p> 
+        </div>     
+        <% } else if (jogador.topMap9 === "Breeze") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/breeze.webp" alt="Breeze" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap9 %></p> 
+        </div> 
+        <% } else if (jogador.topMap9 === "Haven") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/haven.webp" alt="Haven" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap9 %></p> 
+        </div> 
+        <% } else if (jogador.topMap9 === "Icebox") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/icebox.webp" alt="Icebox" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap9 %></p> 
+        </div> 
+        <% } else if (jogador.topMap9 === "Lotus") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/lotus.webp" alt="Lotus" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap9 %></p> 
+        </div>
+        <% } else if (jogador.topMap9 === "Pearl") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/pearl.webp" alt="Pearl" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap9 %></p> 
+        </div>
+        <% } else if (jogador.topMap9 === "Split") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/split.webp" alt="Split" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap9 %></p> 
+        </div>
+        <% } else if (jogador.topMap9 === "Sunset") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/sunset.webp" alt="Sunset" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap9 %></p> 
+        </div>  
+        <% } else { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/fracture.webp" alt="Fracture" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap9 %></p> 
+        </div>
+        <% } %>
+    <!-- <p class="mb-0 espaco-img-agente"><%= jogador.topMap9 %></p> -->
+    </div>
+    <div class="col-sm-6">
+    <div class="d-flex align-items-center">
+      <div class="flex-grow-1 me-3">
+        <div class="progress progress-primary " style="height: 6px;">
+          <div class="progress-bar" style="width: <%= jogador.topMapWinrate9 %>%;"></div>
+        </div>
+      </div>
+      <div class="flex-shrink-0 espaco-mapa">
+        <p class="mb-0 text-muted mapa-negrito"><%= jogador.topMapWinrate9 %>%</p>
+      
+      </div>
+    </div>
+    <div class="direita-mapa">
+      <p class="mb-0 text-muted"><%= jogador.topMapWins9 %>W - <%= jogador.topMapLosses9 %>L</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="row align-items-center mb-3">
+      <div class="tirar-padding d-flex align-items-center col-sm-6 mb-2 mb-sm-0">
+        <% if (jogador.topMap10 == "Ascent") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/ascent.webp" alt="Ascent" width="300" height="200">   
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap10 %></p>  
+        </div>                 
+        <% } else if (jogador.topMap10 === "Bind") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/bind.webp" alt="Bind" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap10 %></p> 
+        </div>     
+        <% } else if (jogador.topMap10 === "Breeze") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/breeze.webp" alt="Breeze" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap10 %></p> 
+        </div> 
+        <% } else if (jogador.topMap10 === "Haven") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/haven.webp" alt="Haven" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap10 %></p> 
+        </div> 
+        <% } else if (jogador.topMap10 === "Icebox") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/icebox.webp" alt="Icebox" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap10 %></p> 
+        </div> 
+        <% } else if (jogador.topMap10 === "Lotus") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/lotus.webp" alt="Lotus" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap10 %></p> 
+        </div>
+        <% } else if (jogador.topMap10 === "Pearl") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/pearl.webp" alt="Pearl" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap10 %></p> 
+        </div>
+        <% } else if (jogador.topMap10 === "Split") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/split.webp" alt="Split" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap10 %></p> 
+        </div>
+        <% } else if (jogador.topMap10 === "Sunset") { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/sunset.webp" alt="Sunset" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap10 %></p> 
+        </div>  
+        <% } else { %>
+        <div class="map-container">
+          <img src="../../public/images/mapas/fracture.webp" alt="Fracture" width="300" height="200">
+          <p class="mb-0 espaco-img-agente map-nome"><%= jogador.topMap10 %></p> 
+        </div>
+        <% } %>
+    <!-- <p class="mb-0 espaco-img-agente"><%= jogador.topMap10 %></p> -->
+    </div>
+    <div class="col-sm-6">
+    <div class="d-flex align-items-center">
+      <div class="flex-grow-1 me-3">
+        <div class="progress progress-primary " style="height: 6px;">
+          <div class="progress-bar" style="width: <%= jogador.topMapWinrate10 %>%;"></div>
+        </div>
+      </div>
+      <div class="flex-shrink-0 espaco-mapa">
+        <p class="mb-0 text-muted mapa-negrito"><%= jogador.topMapWinrate10 %>%</p>
+      
+      </div>
+    </div>
+    <div class="direita-mapa">
+      <p class="mb-0 text-muted"><%= jogador.topMapWins10 %>W - <%= jogador.topMapLosses10 %>L</p>
+    </div>
+    </div>
+    </div>
                       <!-- <div class="row align-items-center">
                         <div class="col-sm-6 mb-2 mb-sm-0">
                           <p class="mb-0">Code Style</p>
@@ -1683,48 +2339,48 @@
                   <div class="row align-items-center mb-3">
                     <div class="col-sm-6 mb-2 mb-sm-0">
                       <div class="tirar-padding d-flex align-items-center">
-                    <% if (jogador.top_agents_1 == "Breach") { %>
+                    <% if (jogador.topAgent1 == "Breach") { %>
                       <img src="../../public/images/user/breach.png" class="img-agente-arredondada" alt="Breach" width="50" height="50">                      
-                    <% } else if (jogador.top_agents_1 === "Brimstone") { %>
+                    <% } else if (jogador.topAgent1 === "Brimstone") { %>
                       <img src="../../public/images/user/brimstone.png" class="img-agente-arredondada" alt="Brimstone" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Chamber") { %>
+                    <% } else if (jogador.topAgent1 === "Chamber") { %>
                       <img src="../../public/images/user/chamber.png" class="img-agente-arredondada" alt="Chamber" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Clove") { %>
+                    <% } else if (jogador.topAgent1 === "Clove") { %>
                       <img src="../../public/images/user/clove.png" class="img-agente-arredondada" alt="Clove" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Cypher") { %>
+                    <% } else if (jogador.topAgent1 === "Cypher") { %>
                       <img src="../../public/images/user/cypher.png" class="img-agente-arredondada" alt="Cypher" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Deadlock") { %>
+                    <% } else if (jogador.topAgent1 === "Deadlock") { %>
                       <img src="../../public/images/user/deadlock.png" class="img-agente-arredondada" alt="Deadlock" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Fade") { %>
+                    <% } else if (jogador.topAgent1 === "Fade") { %>
                       <img src="../../public/images/user/fade.png" class="img-agente-arredondada" alt="Fade" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Gekko") { %>
+                    <% } else if (jogador.topAgent1 === "Gekko") { %>
                       <img src="../../public/images/user/gekko.png" class="img-agente-arredondada" alt="Gekko" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Iso") { %>
+                    <% } else if (jogador.topAgent1 === "Iso") { %>
                       <img src="../../public/images/user/iso.png" class="img-agente-arredondada" alt="Iso" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Jett") { %>
+                    <% } else if (jogador.topAgent1 === "Jett") { %>
                       <img src="../../public/images/user/jett.png" class="img-agente-arredondada" alt="Jett" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Kayo") { %>
+                    <% } else if (jogador.topAgent1 === "Kayo") { %>
                       <img src="../../public/images/user/kayo.png" class="img-agente-arredondada" alt="Kayo" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Killjoy") { %>
+                    <% } else if (jogador.topAgent1 === "Killjoy") { %>
                       <img src="../../public/images/user/killjoy.png" class="img-agente-arredondada" alt="Killjoy" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Neon") { %>
+                    <% } else if (jogador.topAgent1 === "Neon") { %>
                       <img src="../../public/images/user/neon.png" class="img-agente-arredondada" alt="Neon" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Omen") { %>
+                    <% } else if (jogador.topAgent1 === "Omen") { %>
                       <img src="../../public/images/user/omen.png" class="img-agente-arredondada" alt="Omen" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Raze") { %>
+                    <% } else if (jogador.topAgent1 === "Raze") { %>
                       <img src="../../public/images/user/raze.png" class="img-agente-arredondada" alt="Raze" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Reyna") { %>
+                    <% } else if (jogador.topAgent1 === "Reyna") { %>
                       <img src="../../public/images/user/reyna.png" class="img-agente-arredondada" alt="Reyna" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Sage") { %>
+                    <% } else if (jogador.topAgent1 === "Sage") { %>
                       <img src="../../public/images/user/sage.png" class="img-agente-arredondada" alt="Sage" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Sova") { %>
+                    <% } else if (jogador.topAgent1 === "Sova") { %>
                       <img src="../../public/images/user/sova.png" class="img-agente-arredondada" alt="Sova" width="50" height="50">
-                    <% } else if (jogador.top_agents_1 === "Viper") { %>
+                    <% } else if (jogador.topAgent1 === "Viper") { %>
                       <img src="../../public/images/user/viper.png" class="img-agente-arredondada" alt="Viper" width="50" height="50">
                     <% } else { %>
                       <img src="../../public/images/user/yoru.png" class="img-agente-arredondada" alt="Yoru" width="50" height="50">
                     <% } %>
-                    <p class="mb-0 espaco-img-agente"><%= jogador.topAgent3 %></p>
+                    <p class="mb-0 espaco-img-agente"><%= jogador.topAgent1 %></p>
                       </div>
 
                     </div>
@@ -1732,11 +2388,11 @@
                       <div class="d-flex align-items-center">
                         <!-- <div class="flex-grow-1 me-3">
                           <div class="progress progress-primary " style="height: 6px;">
-                            <div class="progress-bar" style="width: <%= jogador.top_hours_agent_1 %>;"></div>
+                            <div class="progress-bar" style="width: <%= jogador.topHoursAgent1 %>;"></div>
                           </div>
                         </div> -->
                         <div class="flex-shrink-0">
-                          <p class="mb-0 text-muted"><%= jogador.top_hours_agent_1 %> horas</p>
+                          <p class="mb-0 text-muted"><%= jogador.topHoursAgent1 %> horas</p>
                         </div>
                       </div>
                     </div>

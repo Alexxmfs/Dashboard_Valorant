@@ -3312,6 +3312,11 @@ $btn-border-radius-lg: 14px; */
   padding: 12px 16px 12px 12px;
 }
 
+/* Henrique */
+[data-pc-theme=light] {
+  --pc-sidebar-user-background: #FFFFFF;
+}
+
 [data-pc-theme=dark] {
   --bs-body-bg: #131920;
   --bs-body-bg-rgb: 19, 25, 32;
