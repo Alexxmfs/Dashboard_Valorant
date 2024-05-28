@@ -3315,6 +3315,8 @@ $btn-border-radius-lg: 14px; */
 /* Henrique */
 [data-pc-theme=light] {
   --pc-sidebar-user-background: #FFFFFF;
+  --border-color: #ECECEC;
+  --border-tag-color: rgba(0, 0, 0, 0.075);
 }
 
 [data-pc-theme=dark] {
@@ -3342,6 +3344,8 @@ $btn-border-radius-lg: 14px; */
   --bs-border-color: #303f50;
   --ck-color-image-caption-background: #1b232d;
   --ck-color-image-caption-text: #bfbfbf;
+  --border-color: white;
+  --border-tag-color: rgba(255, 255, 255, 0.075);
 }
 [data-pc-theme=dark] .text-muted {
   color: #748892 !important;

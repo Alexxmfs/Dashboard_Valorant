@@ -1295,8 +1295,9 @@
 
               <div class="card">
                 <div class="card-body position-relative card-maior">
+                  <span class="fas fa-eye icon-views-large"></span><span class="texto-views texto-views-bold "> <%= jogador.views %></span><span class="texto-views"> views</span>
                   <div class="position-absolute end-0 top-0 p-3">
-                    <span class="badge bg-primary horas"><%= jogador.playtime %>h Jogadas</span>
+                    <span class="badge bg-primary texto-views"><i class="icon-relogio" data-feather="clock"></i> <%= jogador.playtime %>h Jogadas</span>
                   </div>
                   <div class="text-center mt-3">
                     <div class="chat-avtar d-inline-flex mx-auto">
@@ -1326,13 +1327,11 @@
                         var randomIndex = Math.floor(Math.random() * images.length);
                         var selectedImage = images[randomIndex];
                     %>
-                      <img class="rounded-circle img-fluid wid-70" src="<%= selectedImage %>"
+                      <img class="rounded-circle img-fluid wid-95 borda-foto" src="<%= selectedImage %>"
                         alt="User image">
                     </div>
-                    <h5 class="mb-0"><%= jogador.username %></h5>
-                    <div class="circulo-higlight">
-                    <p class="text-muted text-sm">#<%= jogador.tag %></p>
-                    </div>
+                    <h5 class="mb-0 texto-user"><%= jogador.username %></h5>
+                    <p class="text-muted texto-tag circulo-higlight">#<%= jogador.tag %></p>
                     <hr class="my-3 border border-secondary-subtle">
                     <div class="row g-3">
                       <div class="col-4">
@@ -1453,13 +1452,17 @@
                   </div> -->
                   <div class="card">
                     <div class="card-header">
-                      <h3>Top Mapas</h3>
+                      <div class="mapa-container">
+                      <i class="fas fa-map-marker-alt icon-large"></i>
+                      <h3 class="mapa-tira-margin">Top Mapas</h3>
+                    </div>
                     </div>
                     <div class="card-body">
                       <div class="row align-items-center mb-3">
                       <div class="mapa-container">
                         <div class="mapa">
-                        <img id="mapa-img" src="../../public/images/mapas/map-dark.png" alt="Mapa" width="30" height="30">
+                        <!-- <img id="mapa-img" src="../../public/images/mapas/map-dark.png" alt="Mapa" width="30" height="30"> -->
+                        <!-- <i class="fas fa-map-marker-alt icon-large"></i> -->
                       </div>
                         <h4>Mapas</h4>
                       <div class="direita-mapa espaco-mapa">

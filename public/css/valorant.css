@@ -58,11 +58,48 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.borda-foto {
+  border: 4px solid var(--border-color); /* Ajuste a cor e a largura conforme necessário */
+}
+
+.texto-views {
+  font-size: 1rem !important;
+  font-family: "Inter var", sans-serif !important;
+}
+
+.texto-views-bold {
+  font-weight: bold !important;
+}
+
+.borda-horas {
+  padding: 0.8em 0.45em !important;
+}
+
+.icon-views-large {
+  margin-right: 2px;
+  font-size: 18px; 
+}
+
 .circulo-higlight {
-  background-color: rgba(255, 255, 255, 0.16); /* Fundo preto com 50% de opacidade */
-  padding: 10px 10px; /* Espaçamento interno */
+  background-color: var(--border-tag-color); 
+  padding: 0px 6px; /* Espaçamento interno */
   border-radius: 5px; /* Bordas arredondadas */
   display: inline-block;
+  margin-top: 5px;
+}
+
+.icon-relogio {
+  margin-bottom: 5px;
+}
+
+.texto-user {
+  font-size: 2rem !important;
+  /* font-size: 22px; */
+}
+
+.texto-tag {
+  font-size: 1.4rem !important;
+  /* font-size: 22px; */
 }
 
 .map-container {
@@ -105,6 +142,11 @@
   align-items: center;
 }
 
+.icon-large {
+  margin-right: 5px;
+  font-size: 38px; 
+}
+
 .mapa {
   margin-right: 5px; /* Espaço entre a imagem e o texto */
 }
@@ -130,4 +172,9 @@
 
 .mapa-primeiro {
   color: #C7B464;
+}
+
+.mapa-tira-margin {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
 }
