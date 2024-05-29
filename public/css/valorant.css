@@ -178,3 +178,38 @@
   margin: 0 0 0 0;
   padding: 0 0 0 0;
 }
+
+.centro {
+  text-align: center;
+}
+
+.small-text-vitorias{
+  font-size: 12px;
+  font-weight: 400;
+  color: #adadac;
+}
+
+.top_maps_analytics{
+  border-radius: 10px;
+  width: 100px; /* Alterado de 200px para 400px para aumentar o tamanho da imagem */
+  margin-right: 0px; /* Mantém a margem à direita, pode ser ajustado conforme necessário */
+  flex-shrink: 0; /* Impede a imagem de encolher em um contêiner flex */
+}
+
+.img-fluid2 {
+  max-width: 100%;
+  height: auto; /* GKarante que a altura da imagem se ajuste proporcionalmente */
+}
+
+.avtar2 {
+  margin-right: 5px; /* Margem à direita para espaçamento; ajuste como necessário */
+  flex-shrink: 0; /* Evita encolhimento */
+}
+
+.avtar2.avtar-s2 {
+  /* Essas propriedades estão controlando o tamanho de um contêiner que não é a imagem, ajuste se necessário */
+  width: auto; /* Se o .avtar2 estiver relacionado somente com a imagem e seu desejo for ajustá-lo, modifique conforme necessário. Caso contrário, revise sua estrutura HTML para clarificar a aplicação desta classe. */
+  height: auto; /* Ajuste para 'auto' ou especifique um valor se estiver tentando controlar diretamente o tamanho de elementos não imagem. */
+  font-size: 14px; /* Ajuste de fonte não será afetado pelo tamanho da imagem */
+  border-radius: 12px; /* Redondeza de borda, ajustável conforme preferência */
+}

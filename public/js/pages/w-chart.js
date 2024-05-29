@@ -302,7 +302,7 @@ function floatchart() {
       },
       series: [
         {
-          data: [1, 1, 60, 1, 1, 50, 1, 1, 40, 1, 1, 25, 0]
+          data: [20, 15, 12, 8, 19, 5, 7, 17, 19, 14, 13]
         }
       ],
       tooltip: {
@@ -589,8 +589,8 @@ function floatchart() {
         height: 350,
         type: 'pie'
       },
-      labels: ['Components', 'Widgets', 'Pages', 'Forms', 'Other', 'Apps'],
-      series: [40, 20, 10, 15, 5, 10],
+      labels: ['Map', 'Headshot', 'Derrotas', 'Clutchs', 'Partidas', 'Assistencia'],
+      series: [56, 23, 3, 10, 5, 10],
       colors: ['#4680FF', '#4680FF', '#212529', '#212529', '#212529', '#212529'],
       fill: {
         opacity: [1, 0.6, 0.4, 0.6, 0.8, 1]
@@ -621,7 +621,7 @@ function floatchart() {
     var chart = new ApexCharts(document.querySelector('#overview-product-graph'), options16);
     chart.render();
     var options17 = {
-      series: [30],
+      series: [20],
       chart: {
         height: 150,
         type: 'radialBar'
@@ -670,7 +670,7 @@ function floatchart() {
     var chart = new ApexCharts(document.querySelector('#total-earning-graph-1'), options17);
     chart.render();
     var options18 = {
-      series: [30],
+      series: [60],
       chart: {
         height: 150,
         type: 'radialBar'

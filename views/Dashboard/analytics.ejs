@@ -943,7 +943,7 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
-              <h5 class="mb-0">Derrotas: <%= jogadoresData[0].username %>
+              <h5 class="mb-0">Derrotas: <%= jogadoresData[1].username %>
               </h5>
               <select class="form-select rounded-3 form-select-sm w-auto">
                 <option>Today</option>
@@ -954,8 +954,8 @@
             <div class="my-3">
               <div id="new-orders-graph"></div>
               <h5 class="text-center mt-3">
-                <%= jogadoresData[0].loses %> <small class="text-primary"><i class="ti ti-arrow-up-right"></i>
-                    <%= jogadoresData[0].win %>
+                <%= jogadoresData[1].loses %> <small class="text-primary"><i class="ti ti-arrow-up-right"></i>
+                    <%= jogadoresData[1].win %>%
                   </small>
               </h5>
             </div>
@@ -965,43 +965,21 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-xxl-3">
+      <div class="col-md-6 col-xxl-6">
         <div class="card">
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
-              <h5 class="mb-0">Wins: <%= jogadoresData[0].username %></h5>
+              <h5 class="mb-0">Wins: <%= jogadoresData[2].username %></h5>
               <select class="form-select rounded-3 form-select-sm w-auto">
-                <option><%= jogadoresData[2].username %></option>
+                <option><%= jogadoresData[3].username %></option>
                 <option><%= jogadoresData[1].username %></option>
-                <option selected><%= jogadoresData[0].username %></option>
+                <option selected><%= jogadoresData[2].username %></option>
               </select>
             </div>
             <div class="my-3">
               <div id="new-users-graph"></div>
-              <h5 class="text-center mt-3"><%= jogadoresData[0].wins %> <small class="text-success"><i class="ti ti-arrow-up-right"></i>
-                  <%= jogadoresData[0].win %></small></h5>
-            </div>
-            <div class="d-grid">
-              <a class="btn btn-link-primary" role="button" href="#">View More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-xxl-3">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex align-items-center justify-content-between">
-              <h5 class="mb-0">Visitors</h5>
-              <select class="form-select rounded-3 form-select-sm w-auto">
-                <option>Today</option>
-                <option>Weekly</option>
-                <option selected>Monthly</option>
-              </select>
-            </div>
-            <div class="my-3">
-              <div id="visitors-graph"></div>
-              <h5 class="text-center mt-3">$30200 <small class="text-danger"><i class="ti ti-arrow-down-right"></i>
-                  30.6%</small></h5>
+              <h5 class="text-center mt-3"><%= jogadoresData[2].wins %> <small class="text-success"><i class="ti ti-arrow-up-right"></i>
+                  <%= jogadoresData[2].win %>%</small></h5>
             </div>
             <div class="d-grid">
               <a class="btn btn-link-primary" role="button" href="#">View More</a>
@@ -1126,11 +1104,11 @@
                         <div class="row g-1">
                           <div class="col-6">
                             <p class="text-muted mb-1"><%= jogadoresData[0].username %></p>
-                            <h6 class="mb-0"><%= jogadoresData[0].wins %></h6>
+                            <h6 class="mb-0"><%= jogadoresData[0].wins %> <span class="small-text-vitorias">Vitórias</span></h6>
                           </div>
                           <div class="col-6 text-end">
-                            <h6 class="mb-1"><%= jogadoresData[0].top_hours_agent_1 %>h</h6>
-                            <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[0].win %></p>
+                            <h6 class="mb-1"><%= jogadoresData[0].topHoursAgent1 %>h</h6>
+                            <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[0].win %>%</p>
                           </div>
                         </div>
                       </div>
@@ -1147,11 +1125,11 @@
                         <div class="row g-1">
                           <div class="col-6">
                             <p class="text-muted mb-1"><%= jogadoresData[15].username %></p>
-                            <h6 class="mb-0"><%= jogadoresData[15].wins %></h6>
+                            <h6 class="mb-0"><%= jogadoresData[15].wins %> <span class="small-text-vitorias">Vitórias</span></h6>
                           </div>
                           <div class="col-6 text-end">
-                            <h6 class="mb-1"><%= jogadoresData[15].top_hours_agent_1 %>h</h6>
-                            <p class="text-success mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[15].win %></p>
+                            <h6 class="mb-1"><%= jogadoresData[15].topHoursAgent1 %>h</h6>
+                            <p class="text-success mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[15].win %>%</p>
                           </div>
                         </div>
                       </div>
@@ -1168,11 +1146,11 @@
                         <div class="row g-1">
                           <div class="col-6">
                             <p class="text-muted mb-1"><%= jogadoresData[3].username %></p>
-                            <h6 class="mb-0"><%= jogadoresData[3].wins %></h6>
+                            <h6 class="mb-0"><%= jogadoresData[3].wins %> <span class="small-text-vitorias">Vitórias</span></h6>
                           </div>
                           <div class="col-6 text-end">
-                            <h6 class="mb-1"><%= jogadoresData[3].top_hours_agent_1 %>h</h6>
-                            <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[3].win %></p>
+                            <h6 class="mb-1"><%= jogadoresData[3].topHoursAgent1 %>h</h6>
+                            <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[3].win %>%</p>
                           </div>
                         </div>
                       </div>
@@ -1189,11 +1167,11 @@
                         <div class="row g-1">
                           <div class="col-6">
                             <p class="text-muted mb-1"><%= jogadoresData[60].username %></p>
-                            <h6 class="mb-0"><%= jogadoresData[60].wins %></h6>
+                            <h6 class="mb-0"><%= jogadoresData[60].wins %> <span class="small-text-vitorias">Vitórias</span></h6>
                           </div>
                           <div class="col-6 text-end">
-                            <h6 class="mb-1"><%= jogadoresData[60].top_hours_agent_1 %>h</h6>
-                            <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[60].win %></p>
+                            <h6 class="mb-1"><%= jogadoresData[60].topHoursAgent1 %>h</h6>
+                            <p class="text-danger mb-0"><i class="ti ti-arrow-down-left"></i> <%= jogadoresData[60].win %>%</p>
                           </div>
                         </div>
                       </div>
@@ -1205,7 +1183,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xxl-3 col-md-12">
+      <!-- <div class="col-xxl-3 col-md-12">
         <div class="row">
           <div class="col-md-6 col-xxl-12">
             <div class="card">
@@ -1284,12 +1262,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="col-xxl-6 col-md-12">
         <div class="card">
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between mb-3">
-              <h5 class="mb-0">Overview User: <%= jogadoresData[40].username %>: </h5>
+              <h5 class="mb-0">Overview User: <%= jogadoresData[10].username %>: </h5>
               <div class="dropdown">
                 <a class="avtar avtar-s btn-link-secondary dropdown-toggle arrow-none" href="#"
                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1309,38 +1287,38 @@
             <div class="row g-3 text-center">
               <div class="col-6 col-lg-4 col-xxl-4">
                 <div class="overview-product-legends">
-                  <p class="text-dark mb-1"><span><%= jogadoresData[60].wins %></span></p>
-                  <h6 class="mb-0">10+</h6>
+                  <p class="text-dark mb-1"><span>Partidas</span></p>
+                  <h6 class="mb-0"><%= jogadoresData[10].matches %></h6>
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xxl-4">
                 <div class="overview-product-legends">
-                  <p class="text-dark mb-1"><span>Other</span></p>
-                  <h6 class="mb-0">5+</h6>
+                  <p class="text-dark mb-1"><span><%= jogadoresData[10].topMap1 %></span></p>
+                  <h6 class="mb-0"><%= jogadoresData[10].topMapWinrate1 %>%</h6>
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xxl-4">
                 <div class="overview-product-legends">
-                  <p class="text-secondary mb-1"><span>Widgets</span></p>
-                  <h6 class="mb-0">150+</h6>
+                  <p class="text-secondary mb-1"><span>Derrotas</span></p>
+                  <h6 class="mb-0"><%= jogadoresData[10].losses %></h6>
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xxl-4">
                 <div class="overview-product-legends">
-                  <p class="text-secondary mb-1"><span>Forms</span></p>
-                  <h6 class="mb-0">50+</h6>
+                  <p class="text-secondary mb-1"><span>Clutchs</span></p>
+                  <h6 class="mb-0"><%= jogadoresData[10].clutch1v1s %></h6>
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xxl-4">
                 <div class="overview-product-legends">
-                  <p class="text-primary mb-1"><span>Components</span></p>
-                  <h6 class="mb-0">200+</h6>
+                  <p class="text-primary mb-1"><span>Assistencia</span></p>
+                  <h6 class="mb-0"><%= jogadoresData[10].assists %></h6>
                 </div>
               </div>
               <div class="col-6 col-lg-4 col-xxl-4">
                 <div class="overview-product-legends">
-                  <p class="text-primary mb-1"><span>Pages</span></p>
-                  <h6 class="mb-0">150+</h6>
+                  <p class="text-primary mb-1"><span>Headshot</span></p>
+                  <h6 class="mb-0"><%= jogadoresData[10].headshot %>%</h6>
                 </div>
               </div>
             </div>
@@ -1359,13 +1337,13 @@
           </div>
         </div>
       </div>
-      <div class="col-xxl-3 col-md-12">
+      <div class="col-xxl-6 col-md-12">
         <div class="row">
           <div class="col-md-6 col-xxl-12">
             <div class="card">
               <div class="card-body pb-0">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                  <h5 class="mb-0">Payment History</h5>
+                  <h5 class="mb-0">Top Maps</h5>
                   <a class="avtar avtar-s btn-link-secondary">
                     <i class="ti ti-plus f-18"></i>
                   </a>
@@ -1375,13 +1353,13 @@
                 <li class="list-group-item">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <div class="avtar avtar-s bg-light-secondary">
-                        <img src="../public/images/widget/img-paypal.png" alt="img" class="img-fluid" />
+                      <div class="avtar2 avtar-s2">
+                        <img src="../../public/images/mapas/lotus.webp" alt="img" class="img-fluid2 top_maps_analytics" />
                       </div>
                     </div>
                     <div class="flex-grow-1 mx-2">
-                      <p class="mb-1">Paypal</p>
-                      <h6 class="mb-0">+210,000 <small class="text-success">+ 30.6%</small></h6>
+                      <p class="mb-1"><%= jogadoresData[0].topMap1 %></p>
+                      <h6 class="mb-0">+<%= jogadoresData[0].topMapWins1 %> <small class="text-success">+ <%= jogadoresData[0].topMapWinrate1 %></small></h6>
                     </div>
                     <div class="flex-shrink-0">
                       <div class="dropdown">
@@ -1402,13 +1380,13 @@
                 <li class="list-group-item">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <div class="avtar avtar-s bg-light-secondary">
-                        <img src="../../public/images/widget/img-gpay.png" alt="img" class="img-fluid" />
+                      <div class="avtar2 avtar-s2">
+                        <img src="../../public/images/mapas/breeze.webp" alt="img" class="img-fluid2 top_maps_analytics" />
                       </div>
                     </div>
                     <div class="flex-grow-1 mx-2">
-                      <p class="mb-1">Gpay</p>
-                      <h6 class="mb-0">-$2,000 <small class="text-danger">- 30.6%</small></h6>
+                      <p class="mb-1"><%= jogadoresData[1].topMap1 %></p>
+                      <h6 class="mb-0">+<%= jogadoresData[1].topMapWins1 %> <small class="text-success">+  <%= jogadoresData[1].topMapWinrate1 %></small></h6>
                     </div>
                     <div class="flex-shrink-0">
                       <div class="dropdown">
@@ -1429,13 +1407,13 @@
                 <li class="list-group-item">
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <div class="avtar avtar-s bg-light-secondary">
-                        <img src="../../public/images/widget/img-phonepay.png" alt="img" class="img-fluid" />
+                      <div class="avtar2 avtar-s2">
+                        <img src="../../public/images/mapas/sunset.webp" alt="img" class="img-fluid2 top_maps_analytics" />
                       </div>
                     </div>
                     <div class="flex-grow-1 mx-2">
-                      <p class="mb-1">Phone Pay</p>
-                      <h6 class="mb-0">-$2,000 <small class="text-danger">- 30.6%</small></h6>
+                      <p class="mb-1"><%= jogadoresData[2].topMap1 %></p>
+                      <h6 class="mb-0">+<%= jogadoresData[2].topMapWins1 %> <small class="text-success">+ <%= jogadoresData[1].topMapWinrate1 %></small></h6>
                     </div>
                     <div class="flex-shrink-0">
                       <div class="dropdown">
@@ -1471,7 +1449,7 @@
                     </div>
                   </div>
                   <div class="flex-grow-1 mx-2">
-                    <p class="mb-1">Total Earning</p>
+                    <p class="mb-1">Total Earning: <%= jogadoresData[10].username %></p>
                     <h6 class="mb-0">$45,890</h6>
                   </div>
                 </div>
@@ -1486,8 +1464,8 @@
                     </div>
                   </div>
                   <div class="flex-grow-1 mx-2">
-                    <p class="mb-1">Total Earning</p>
-                    <h6 class="mb-0">$45,890</h6>
+                    <p class="mb-1">Views: <%= jogadoresData[0].username %></p>
+                    <h6 class="mb-0"><%= jogadoresData[10].views %></h6>
                   </div>
                 </div>
               </div>
