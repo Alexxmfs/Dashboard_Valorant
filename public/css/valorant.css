@@ -137,6 +137,30 @@
   text-shadow: 1px 1px 2px black;
 }
 
+.map-nome-maior{
+  position: absolute;
+  top: 12px; /* Ajuste a posição vertical */
+  left: 10%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 24px; /* Ajuste o tamanho da fonte */
+  font-weight: bold;
+  padding: 8px 16px 0px 40px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.map-nome-maior-ainda{
+  position: absolute;
+  top: 12px; /* Ajuste a posição vertical */
+  left: 10%;
+  transform: translateX(-20%);
+  color: white;
+  font-size: 24px; /* Ajuste o tamanho da fonte */
+  font-weight: bold;
+  padding: 8px 16px;
+  text-shadow: 1px 1px 2px black;
+}
+
 .mapa-container {
   display: flex;
   align-items: center;
@@ -189,6 +213,10 @@
   color: #adadac;
 }
 
+.img-agente-arredondada {
+  border-radius: 20%;
+}
+
 .top_maps_analytics{
   border-radius: 10px;
   width: 100px; /* Alterado de 200px para 400px para aumentar o tamanho da imagem */
@@ -212,4 +240,60 @@
   height: auto; /* Ajuste para 'auto' ou especifique um valor se estiver tentando controlar diretamente o tamanho de elementos não imagem. */
   font-size: 14px; /* Ajuste de fonte não será afetado pelo tamanho da imagem */
   border-radius: 12px; /* Redondeza de borda, ajustável conforme preferência */
+}
+
+.agente-nome {
+  font-size: 1.25rem !important;
+}
+
+.agente-horas {
+  font-size: 0.8rem !important;
+  transform: translateX(10%);
+}
+
+.agente-negrito {
+  font-size: 24px !important;
+  font-weight: bold !important;
+}
+
+.arma-esquerda {
+  text-align: left !important;
+  transform: translateX(-900%);
+}
+
+.espaco-arma {
+  padding-bottom: 50px;
+}
+
+.kills {
+  font-size: 16px !important;
+  margin-bottom: 0px;
+}
+
+.kills-numero {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  transform: translateX(-20%);
+}
+
+.top-arma {
+  font-size: 38px !important;
+  font-weight: bold !important;
+}
+
+.espaco-pessoa {
+  margin-top: 20px;
+}
+
+.espaco-nome-arma {
+  margin-top: 80px;
+}
+
+.espaco-nome-arma1 {
+  margin-top: 60px;
+}
+
+.rank {
+  font-size: large;
+  font-weight: bold;
 }
